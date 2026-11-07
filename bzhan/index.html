@@ -1,0 +1,1587 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>b站-热门番剧与UP主推荐_弹幕直播与游戏分区指南</title>
+  <meta name="description" content="b站内容专题页，聚合热门番剧、UP主推荐、游戏直播与弹幕文化解读。无论你是追番党、游戏玩家还是知识区常驻用户，这里提供最新更新、社区热议与深度分析，帮助快速找到感兴趣的内容。收藏本页，不错过每一次精彩更新。" />
+  <meta name="keywords" content="b站,热门番剧,UP主推荐,游戏直播,弹幕文化,知识区" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23fb7299'/%3E%3Ctext x='50' y='68' font-size='54' text-anchor='middle' fill='white' font-family='Arial'%3EB%3C/text%3E%3C/svg%3E" />
+  <style>
+    /* ---------- 全局变量 奶油卡片风 ---------- */
+    :root {
+      --bg-body: #fdf7f2;
+      --bg-card: #ffffff;
+      --bg-soft: #fef3ec;
+      --text-main: #2d2a28;
+      --text-sub: #6b5e57;
+      --text-light: #9a8e86;
+      --brand: #fb7299;
+      --brand-light: #ffb3c6;
+      --brand-deep: #e05a7a;
+      --accent: #4a90e2;
+      --accent-soft: #e8f0fe;
+      --border: #f0e4dc;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+      --shadow-md: 0 8px 20px rgba(0,0,0,0.06);
+      --shadow-hover: 0 12px 28px rgba(0,0,0,0.10);
+      --radius: 16px;
+      --radius-sm: 10px;
+      --radius-pill: 40px;
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+      --max-width: 1200px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg-body);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul, ol {
+      list-style: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ---------- 通用组件 ---------- */
+    .sec-padding {
+      padding: 56px 0;
+    }
+
+    .sec-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+      gap: 12px;
+    }
+
+    .sec-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .sec-title::before {
+      content: "";
+      display: inline-block;
+      width: 6px;
+      height: 1.2em;
+      background: var(--brand);
+      border-radius: 4px;
+      margin-right: 12px;
+      flex-shrink: 0;
+    }
+
+    .sec-desc {
+      color: var(--text-sub);
+      font-size: 0.95rem;
+      max-width: 600px;
+    }
+
+    .sec-link {
+      font-size: 0.9rem;
+      color: var(--brand-deep);
+      font-weight: 500;
+      border-bottom: 1px dashed var(--brand-light);
+      transition: color 0.2s;
+    }
+
+    .sec-link:hover {
+      color: var(--brand);
+    }
+
+    .card {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+      border: 1px solid var(--border);
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 500;
+      padding: 2px 10px;
+      border-radius: var(--radius-pill);
+      background: var(--bg-soft);
+      color: var(--brand-deep);
+      white-space: nowrap;
+    }
+
+    .tag-blue {
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    .tag-pink {
+      background: #fce8ef;
+      color: var(--brand-deep);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 24px;
+      border-radius: var(--radius-pill);
+      font-weight: 500;
+      font-size: 0.9rem;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      background: var(--brand);
+      color: #fff;
+    }
+
+    .btn:hover {
+      background: var(--brand-deep);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid var(--border);
+      color: var(--text-main);
+    }
+
+    .btn-outline:hover {
+      background: var(--bg-soft);
+      border-color: var(--brand-light);
+    }
+
+    .text-muted {
+      color: var(--text-light);
+      font-size: 0.8rem;
+    }
+
+    /* 网格系统 */
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    /* ---------- 顶部导航 ---------- */
+    .nav-bar {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--brand-deep);
+    }
+
+    .logo-mark {
+      width: 36px;
+      height: 36px;
+      background: var(--brand);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: 800;
+      line-height: 1;
+      box-shadow: 0 4px 10px rgba(251, 114, 153, 0.3);
+    }
+
+    .logo span {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      font-size: 0.88rem;
+      color: var(--text-sub);
+      transition: background 0.2s, color 0.2s;
+      font-weight: 450;
+    }
+
+    .nav-links a:hover {
+      background: var(--bg-soft);
+      color: var(--brand-deep);
+    }
+
+    /* ---------- Banner ---------- */
+    .hero-banner {
+      background: linear-gradient(135deg, #fff5f0 0%, #fef0f5 100%);
+      padding: 56px 0 48px;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-banner::after {
+      content: '';
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(251, 114, 153, 0.08) 0%, transparent 70%);
+      right: -100px;
+      top: -100px;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 780px;
+    }
+
+    .hero-h1 {
+      font-size: 2.7rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .hero-h1 em {
+      font-style: normal;
+      color: var(--brand-deep);
+      position: relative;
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--text-sub);
+      margin-bottom: 28px;
+      max-width: 640px;
+    }
+
+    .hero-search {
+      display: flex;
+      align-items: center;
+      background: #fff;
+      border-radius: var(--radius-pill);
+      padding: 6px 6px 6px 22px;
+      box-shadow: var(--shadow-sm);
+      max-width: 520px;
+      border: 1px solid var(--border);
+      margin-bottom: 24px;
+    }
+
+    .hero-search input {
+      border: none;
+      outline: none;
+      flex: 1;
+      font-size: 0.95rem;
+      padding: 8px 0;
+      background: transparent;
+      font-family: var(--font);
+    }
+
+    .hero-search input::placeholder {
+      color: var(--text-light);
+    }
+
+    .hero-search .btn {
+      padding: 8px 20px;
+      font-size: 0.85rem;
+    }
+
+    .hero-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .hero-btns a {
+      padding: 8px 18px;
+      background: #fff;
+      border-radius: var(--radius-pill);
+      font-size: 0.85rem;
+      color: var(--text-sub);
+      border: 1px solid var(--border);
+      transition: background 0.2s, border-color 0.2s;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hero-btns a:hover {
+      background: var(--bg-soft);
+      border-color: var(--brand-light);
+      color: var(--brand-deep);
+    }
+
+    /* ---------- 分类入口 ---------- */
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .cat-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 20px;
+      background: var(--bg-card);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .cat-item:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .cat-icon {
+      width: 42px;
+      height: 42px;
+      background: var(--bg-soft);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    .cat-info h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .cat-info p {
+      font-size: 0.75rem;
+      color: var(--text-light);
+    }
+
+    /* ---------- 推荐卡片 ---------- */
+    .rec-card {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.22s, box-shadow 0.22s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .rec-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .rec-cover {
+      height: 140px;
+      background: linear-gradient(145deg, #fde8ef, #fdf0f3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.4rem;
+      color: var(--brand-light);
+      position: relative;
+    }
+
+    .rec-cover .cover-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(0,0,0,0.55);
+      color: #fff;
+      padding: 2px 10px;
+      border-radius: var(--radius-pill);
+      font-size: 0.7rem;
+      backdrop-filter: blur(4px);
+    }
+
+    .rec-body {
+      padding: 16px 18px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+    }
+
+    .rec-body h4 {
+      font-size: 1rem;
+      font-weight: 650;
+      line-height: 1.35;
+    }
+
+    .rec-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .rec-desc {
+      font-size: 0.82rem;
+      color: var(--text-sub);
+      line-height: 1.5;
+      flex: 1;
+    }
+
+    .rec-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      color: var(--text-light);
+      border-top: 1px solid var(--border);
+      padding-top: 10px;
+      margin-top: 4px;
+    }
+
+    /* ---------- 更新列表 ---------- */
+    .update-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      background: var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .update-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--bg-card);
+      padding: 16px 22px;
+      transition: background 0.2s;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .update-item:hover {
+      background: var(--bg-soft);
+    }
+
+    .update-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex: 1;
+      min-width: 180px;
+    }
+
+    .update-badge {
+      background: var(--brand-light);
+      color: #fff;
+      font-size: 0.65rem;
+      padding: 2px 10px;
+      border-radius: var(--radius-pill);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .update-name {
+      font-weight: 550;
+      font-size: 0.95rem;
+    }
+
+    .update-desc {
+      font-size: 0.82rem;
+      color: var(--text-sub);
+    }
+
+    .update-time {
+      font-size: 0.75rem;
+      color: var(--text-light);
+      white-space: nowrap;
+    }
+
+    /* ---------- 深度解析 ---------- */
+    .deep-article {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      padding: 36px 40px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .deep-article h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin: 24px 0 10px;
+    }
+
+    .deep-article h3:first-of-type {
+      margin-top: 0;
+    }
+
+    .deep-article p {
+      font-size: 0.95rem;
+      color: var(--text-sub);
+      margin-bottom: 14px;
+      line-height: 1.8;
+    }
+
+    .deep-article strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    .deep-article .highlight-box {
+      background: var(--bg-soft);
+      border-left: 4px solid var(--brand);
+      padding: 16px 22px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin: 20px 0;
+    }
+
+    .deep-article .highlight-box p {
+      margin-bottom: 0;
+      color: var(--text-main);
+    }
+
+    /* ---------- FAQ 手风琴 ---------- */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .faq-item {
+      background: var(--bg-card);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition: box-shadow 0.2s;
+    }
+
+    .faq-item:hover {
+      box-shadow: var(--shadow-sm);
+    }
+
+    .faq-q {
+      padding: 16px 22px;
+      font-weight: 550;
+      font-size: 0.95rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--bg-card);
+      transition: background 0.2s;
+    }
+
+    .faq-q:hover {
+      background: var(--bg-soft);
+    }
+
+    .faq-q::after {
+      content: '＋';
+      font-weight: 400;
+      color: var(--brand);
+      font-size: 1.1rem;
+      transition: transform 0.2s;
+    }
+
+    .faq-item.open .faq-q::after {
+      content: '－';
+    }
+
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      padding: 0 22px;
+      color: var(--text-sub);
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    .faq-item.open .faq-a {
+      max-height: 300px;
+      padding: 0 22px 18px;
+    }
+
+    /* ---------- 评论 ---------- */
+    .comment-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .comment-item {
+      display: flex;
+      gap: 14px;
+      padding: 16px 20px;
+      background: var(--bg-card);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+    }
+
+    .comment-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--brand-light), var(--accent-soft));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      color: #fff;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .comment-main {
+      flex: 1;
+    }
+
+    .comment-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 4px;
+    }
+
+    .comment-name {
+      font-weight: 600;
+      font-size: 0.88rem;
+    }
+
+    .comment-date {
+      font-size: 0.72rem;
+      color: var(--text-light);
+    }
+
+    .comment-text {
+      font-size: 0.88rem;
+      color: var(--text-sub);
+      line-height: 1.6;
+    }
+
+    /* ---------- 资讯卡片 ---------- */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .news-card {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      padding: 22px 24px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .news-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .news-date {
+      font-size: 0.72rem;
+      color: var(--text-light);
+    }
+
+    .news-card h4 {
+      font-size: 1rem;
+      font-weight: 650;
+      line-height: 1.4;
+    }
+
+    .news-card p {
+      font-size: 0.82rem;
+      color: var(--text-sub);
+      line-height: 1.5;
+    }
+
+    /* ---------- 页脚 ---------- */
+    .site-footer {
+      background: #2d2a28;
+      color: #b8afa8;
+      padding: 48px 0 32px;
+      margin-top: 20px;
+    }
+
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 40px;
+      margin-bottom: 36px;
+    }
+
+    .footer-col h5 {
+      color: #fff;
+      font-weight: 600;
+      margin-bottom: 14px;
+      font-size: 0.95rem;
+    }
+
+    .footer-col p {
+      font-size: 0.82rem;
+      line-height: 1.8;
+      margin-bottom: 8px;
+    }
+
+    .footer-col a {
+      color: #b8afa8;
+      font-size: 0.82rem;
+      transition: color 0.2s;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .footer-col a:hover {
+      color: var(--brand-light);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #3e3a37;
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.75rem;
+    }
+
+    /* ---------- 响应式 ---------- */
+    @media (max-width: 1024px) {
+      .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .cat-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .footer-inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+      }
+      .hero-h1 {
+        font-size: 2.2rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 18px;
+      }
+      .sec-padding {
+        padding: 40px 0;
+      }
+      .hero-banner {
+        padding: 40px 0 32px;
+      }
+      .hero-h1 {
+        font-size: 1.7rem;
+      }
+      .hero-sub {
+        font-size: 0.95rem;
+      }
+      .grid-4, .grid-3, .grid-2 {
+        grid-template-columns: 1fr;
+      }
+      .cat-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .news-grid {
+        grid-template-columns: 1fr;
+      }
+      .nav-links {
+        display: none;
+      }
+      .deep-article {
+        padding: 24px 20px;
+      }
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .update-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+      }
+      .hero-search {
+        max-width: 100%;
+      }
+      .sec-title {
+        font-size: 1.4rem;
+      }
+      .update-left {
+        min-width: 0;
+        flex-wrap: wrap;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .cat-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-h1 {
+        font-size: 1.45rem;
+      }
+      .hero-btns a {
+        font-size: 0.78rem;
+        padding: 6px 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== 导航 ========== -->
+  <header class="nav-bar">
+    <div class="container nav-inner">
+      <a href="/" class="logo" aria-label="b站内容导航">
+        <span class="logo-mark">B</span>
+        <span>b站</span>
+      </a>
+      <nav class="nav-links" aria-label="主导航">
+        <a href="/#hot-rec">热门推荐</a>
+        <a href="/#latest-update">最新更新</a>
+        <a href="/#deep-analysis">深度解析</a>
+        <a href="/#cat-entry">分类入口</a>
+        <a href="/#faq-section">常见问题</a>
+        <a href="/#comments">用户评论</a>
+        <a href="/#news-section">相关资讯</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== Banner ========== -->
+  <section class="hero-banner" id="hero">
+    <div class="container hero-content">
+      <h1 class="hero-h1">b站 <em>热门内容</em> 与社区生态全景指南</h1>
+      <p class="hero-sub">
+        从番剧到游戏，从知识区到生活区，b站的每一次刷新都有新发现。这里聚合热门UP主、新番动态、直播看点与弹幕文化，帮你快速找到感兴趣的内容分区。
+      </p>
+      <p class="hero-sub" style="margin-top:-14px;font-size:0.92rem;">
+        无论你是追番党、游戏玩家还是硬核知识爱好者，都可以通过分类筛选、更新追踪与社区评论，找到属于你的b站打开方式。
+      </p>
+      <div class="hero-search">
+        <input type="search" placeholder="搜索番剧、UP主、游戏或直播..." aria-label="站内搜索" />
+        <button class="btn" type="button">搜索</button>
+      </div>
+      <div class="hero-btns">
+        <a href="/#hot-rec">🔥 热门推荐</a>
+        <a href="/#latest-update">🆕 最新更新</a>
+        <a href="/#cat-entry">📂 分类入口</a>
+        <a href="/#deep-analysis">📖 深度解析</a>
+        <a href="/#faq-section">❓ 常见问题</a>
+        <a href="/#comments">💬 用户评论</a>
+        <a href="/#news-section">📰 相关资讯</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 内容简介 ========== -->
+  <section class="sec-padding" id="intro">
+    <div class="container">
+      <div class="sec-header">
+        <h2 class="sec-title">关于b站内容专题</h2>
+        <span class="sec-desc">为什么这个页面值得你收藏</span>
+      </div>
+      <div class="deep-article" style="padding:32px 36px;">
+        <p>
+          <strong>b站</strong>作为国内年轻世代高度聚集的文化社区与视频平台，内容生态覆盖番剧、国创、电影、纪录片、游戏、知识、生活、鬼畜、舞蹈、音乐、时尚、科技、美食等众多分区。用户在这里不仅是观看者，更是创作者与传播者，弹幕文化、投币点赞、收藏转发构成了独特的社区互动方式。本专题页围绕b站的内容消费场景，从热门推荐、更新动态、分区导航、深度解析到社区评论，提供一站式入口。
+        </p>
+        <p>
+          对于刚接触b站的新用户，页面可以帮助你快速了解各分区特色与头部内容；对于老用户，这里聚合了近期热门UP主作品、番剧更新、游戏赛事与直播动向，减少在信息流中反复翻找的时间。内容筛选维度兼顾大众热度与垂直深度，既能看到大众向的搞笑整活，也能发现硬核知识区的宝藏内容。所有信息均以编辑视角整理，卡片式布局配合标签系统，方便按兴趣浏览。
+        </p>
+        <p>
+          建议将本页加入收藏或设为书签，每次打开都能看到与b站生态相关的最新整理。页面结构清晰，移动端阅读友好，适合在碎片时间快速浏览。无论你是想找一部下饭番剧、学点新知识，还是围观游戏区的高能操作，这里都能提供有价值的参考。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 热门推荐 ========== -->
+  <section class="sec-padding" id="hot-rec" style="background:var(--bg-soft);">
+    <div class="container">
+      <div class="sec-header">
+        <h2 class="sec-title">热门内容推荐</h2>
+        <a href="/#hot-rec" class="sec-link">查看更多 →</a>
+      </div>
+      <div class="grid-4">
+        <!-- 卡片 1 -->
+        <article class="rec-card">
+          <div class="rec-cover" style="background:linear-gradient(135deg,#ffe0e6,#fce4ec);">📺</div>
+          <div class="rec-body">
+            <h4>《时光代理人》第二季</h4>
+            <div class="rec-tags">
+              <span class="tag tag-pink">国创</span>
+              <span class="tag tag-blue">悬疑</span>
+              <span class="tag">催泪</span>
+            </div>
+            <p class="rec-desc">程小时与陆光再度联手，穿越照片改变过去，本季剧情高能反转不断，刀片与糖齐飞。</p>
+            <div class="rec-meta">
+              <span>🔥 热度 982w</span>
+              <span>更新至第8集</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 卡片 2 -->
+        <article class="rec-card">
+          <div class="rec-cover" style="background:linear-gradient(135deg,#e0f0fe,#dce8ff);">🎮</div>
+          <div class="rec-body">
+            <h4>老番茄 · 新游速通</h4>
+            <div class="rec-tags">
+              <span class="tag tag-blue">游戏</span>
+              <span class="tag">搞笑</span>
+              <span class="tag tag-pink">高能</span>
+            </div>
+            <p class="rec-desc">老番茄挑战最新恐怖游戏，全程高能吐槽，弹幕比游戏更吓人，下饭必备。</p>
+            <div class="rec-meta">
+              <span>🔥 播放 420w</span>
+              <span>全1集</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 卡片 3 -->
+        <article class="rec-card">
+          <div class="rec-cover" style="background:linear-gradient(135deg,#e8f5e9,#f1f8e9);">📚</div>
+          <div class="rec-body">
+            <h4>罗翔说刑法 · 普法专场</h4>
+            <div class="rec-tags">
+              <span class="tag tag-blue">知识</span>
+              <span class="tag">法律</span>
+              <span class="tag tag-pink">深度</span>
+            </div>
+            <p class="rec-desc">用真实案例讲解刑法知识，风趣幽默又发人深省，知识区常驻热门。</p>
+            <div class="rec-meta">
+              <span>🔥 播放 310w</span>
+              <span>更新至第12讲</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 卡片 4 -->
+        <article class="rec-card">
+          <div class="rec-cover" style="background:linear-gradient(135deg,#fff3e0,#ffe9d6);">🎤</div>
+          <div class="rec-body">
+            <h4>2026 b站跨年晚会幕后</h4>
+            <div class="rec-tags">
+              <span class="tag tag-pink">晚会</span>
+              <span class="tag">音乐</span>
+              <span class="tag tag-blue">幕后</span>
+            </div>
+            <p class="rec-desc">揭秘跨年晚会排练花絮与舞台设计，嘉宾访谈与交响乐团合作曲目抢先看。</p>
+            <div class="rec-meta">
+              <span>🔥 热度 760w</span>
+              <span>全3集</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 卡片 5 -->
+        <article class="rec-card">
+          <div class="rec-cover" style="background:linear-gradient(135deg,#f3e5f5,#ede7f6);">🕹️</div>
+          <div class="rec-body">
+            <h4>中国BOY · 独立游戏精选</h4>
+            <div class="rec-tags">
+              <span class="tag tag-blue">游戏</span>
+              <span class="tag">独立</span>
+              <span class="tag tag-pink">安利</span>
+            </div>
+            <p class="rec-desc">挖掘冷门但好玩的独立游戏，本期介绍三款像素风解谜作品，剧情与玩法俱佳。</p>
+            <div class="rec-meta">
+              <span>🔥 播放 280w</span>
+              <span>更新至第6期</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 卡片 6 -->
+        <article class="rec-card">
+          <div class="rec-cover" style="background:linear-gradient(135deg,#e0f7fa,#e0f2f1);">🎬</div>
+          <div class="rec-body">
+            <h4>影视飓风 · 镜头下的中国</h4>
+            <div class="rec-tags">
+              <span class="tag tag-blue">科技</span>
+              <span class="tag">摄影</span>
+              <span class="tag tag-pink">视觉</span>
+            </div>
+            <p class="rec-desc">用电影级设备记录国内自然风光与城市变迁，每一帧都能当壁纸，幕后制作全解析。</p>
+            <div class="rec-meta">
+              <span>🔥 播放 550w</span>
+              <span>全1集</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 卡片 7 -->
+        <article class="rec-card">
+          <div class="rec-cover" style="background:linear-gradient(135deg,#fce4ec,#f3e5f5);">🎵</div>
+          <div class="rec-body">
+            <h4>音乐区 · 原创古风企划</h4>
+            <div class="rec-tags">
+              <span class="tag tag-pink">音乐</span>
+              <span class="tag">古风</span>
+              <span class="tag tag-blue">原创</span>
+            </div>
+            <p class="rec-desc">多位UP主联合创作古风原创曲，融合琵琶与电子元素，MV画风精致。</p>
+            <div class="rec-meta">
+              <span>🔥 播放 190w</span>
+              <span>全1集</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 卡片 8 -->
+        <article class="rec-card">
+          <div class="rec-cover" style="background:linear-gradient(135deg,#fff8e1,#fff3e0);">🍜</div>
+          <div class="rec-body">
+            <h4>美食区 · 深夜食堂特辑</h4>
+            <div class="rec-tags">
+              <span class="tag tag-blue">生活</span>
+              <span class="tag">美食</span>
+              <span class="tag tag-pink">治愈</span>
+            </div>
+            <p class="rec-desc">深夜放毒系列，从街边小吃到家常菜复刻，感受食物带来的温暖与慰藉。</p>
+            <div class="rec-meta">
+              <span>🔥 播放 230w</span>
+              <span>更新至第4集</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 最新更新 ========== -->
+  <section class="sec-padding" id="latest-update">
+    <div class="container">
+      <div class="sec-header">
+        <h2 class="sec-title">最新更新与热播动态</h2>
+        <span class="sec-desc">2026年11月7日 编辑整理</span>
+      </div>
+      <div class="update-list">
+        <div class="update-item">
+          <div class="update-left">
+            <span class="update-badge">番剧</span>
+            <span class="update-name">《凡人修仙传》</span>
+            <span class="update-desc">第128集更新，韩立突破元婴后期</span>
+          </div>
+          <span class="update-time">今天 10:00</span>
+        </div>
+        <div class="update-item">
+          <div class="update-left">
+            <span class="update-badge">直播</span>
+            <span class="update-name">英雄联盟S16总决赛</span>
+            <span class="update-desc">今晚19:00 b站独家二路解说</span>
+          </div>
+          <span class="update-time">今天 19:00</span>
+        </div>
+        <div class="update-item">
+          <div class="update-left">
+            <span class="update-badge">国创</span>
+            <span class="update-name">《灵笼》第二季</span>
+            <span class="update-desc">第10集上线，马克身份揭晓</span>
+          </div>
+          <span class="update-time">昨天 18:00</span>
+        </div>
+        <div class="update-item">
+          <div class="update-left">
+            <span class="update-badge">游戏</span>
+            <span class="update-name">《黑神话：悟空》DLC</span>
+            <span class="update-desc">新章节“再战天兵”实机演示首曝</span>
+          </div>
+          <span class="update-time">昨天 14:30</span>
+        </div>
+        <div class="update-item">
+          <div class="update-left">
+            <span class="update-badge">知识</span>
+            <span class="update-name">罗翔新普法系列</span>
+            <span class="update-desc">第13讲上线，罗翔解析网络暴力</span>
+          </div>
+          <span class="update-time">11月5日</span>
+        </div>
+        <div class="update-item">
+          <div class="update-left">
+            <span class="update-badge">综艺</span>
+            <span class="update-name">《说唱新世代2》</span>
+            <span class="update-desc">第6期上线，厂牌对决火药味十足</span>
+          </div>
+          <span class="update-time">11月4日</span>
+        </div>
+        <div class="update-item">
+          <div class="update-left">
+            <span class="update-badge">纪录片</span>
+            <span class="update-name">《人生一串4》</span>
+            <span class="update-desc">先导片上线，深夜烧烤回归</span>
+          </div>
+          <span class="update-time">11月3日</span>
+        </div>
+        <div class="update-item">
+          <div class="update-left">
+            <span class="update-badge">音乐</span>
+            <span class="update-name">b站原创音乐榜</span>
+            <span class="update-desc">十月榜单公布，古风曲《洛神赋》登顶</span>
+          </div>
+          <span class="update-time">11月2日</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 分类入口 ========== -->
+  <section class="sec-padding" id="cat-entry" style="background:var(--bg-soft);">
+    <div class="container">
+      <div class="sec-header">
+        <h2 class="sec-title">内容分类入口</h2>
+        <span class="sec-desc">找到你感兴趣的分区</span>
+      </div>
+      <div class="cat-grid">
+        <a href="/#cat-entry" class="cat-item">
+          <div class="cat-icon">📺</div>
+          <div class="cat-info">
+            <h4>番剧国创</h4>
+            <p>新番连载 · 国创动画</p>
+          </div>
+        </a>
+        <a href="/#cat-entry" class="cat-item">
+          <div class="cat-icon">🎮</div>
+          <div class="cat-info">
+            <h4>游戏电竞</h4>
+            <p>实况攻略 · 赛事直播</p>
+          </div>
+        </a>
+        <a href="/#cat-entry" class="cat-item">
+          <div class="cat-icon">📚</div>
+          <div class="cat-info">
+            <h4>知识教育</h4>
+            <p>科普法律 · 技能学习</p>
+          </div>
+        </a>
+        <a href="/#cat-entry" class="cat-item">
+          <div class="cat-icon">🎵</div>
+          <div class="cat-info">
+            <h4>音乐舞蹈</h4>
+            <p>原创音乐 · 宅舞翻跳</p>
+          </div>
+        </a>
+        <a href="/#cat-entry" class="cat-item">
+          <div class="cat-icon">🎬</div>
+          <div class="cat-info">
+            <h4>影视纪录片</h4>
+            <p>影评解说 · 纪实影像</p>
+          </div>
+        </a>
+        <a href="/#cat-entry" class="cat-item">
+          <div class="cat-icon">🍜</div>
+          <div class="cat-info">
+            <h4>生活美食</h4>
+            <p>探店烹饪 · 日常Vlog</p>
+          </div>
+        </a>
+        <a href="/#cat-entry" class="cat-item">
+          <div class="cat-icon">😂</div>
+          <div class="cat-info">
+            <h4>鬼畜搞笑</h4>
+            <p>鬼畜调教 · 整活名场面</p>
+          </div>
+        </a>
+        <a href="/#cat-entry" class="cat-item">
+          <div class="cat-icon">💻</div>
+          <div class="cat-info">
+            <h4>科技数码</h4>
+            <p>产品评测 · 前沿科技</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 深度解析 ========== -->
+  <section class="sec-padding" id="deep-analysis">
+    <div class="container">
+      <div class="sec-header">
+        <h2 class="sec-title">深度解析 · b站内容生态与消费指南</h2>
+      </div>
+      <div class="deep-article">
+        <h3>b站的内容分区与推荐逻辑</h3>
+        <p>
+          b站的内容分区设计兼顾了大众娱乐与垂直深度。番剧区与国创区是平台的传统强项，每季度引进的正版新番与自制国创作品吸引大量追番用户，弹幕中的“追番打卡”“前方高能”成为独特的观看仪式。游戏区覆盖主机游戏、手游、电竞赛事与独立游戏，既有头部UP主的高能剪辑，也有硬核攻略与剧情解析。知识区近年增长迅速，罗翔说刑法、半佛仙人等UP主将专业知识转化为通俗内容，降低了学习门槛。生活区与美食区则强调真实感与陪伴感，Vlog与探店视频让用户感受到生活方式的多样性。
+        </p>
+        <h3>热门内容的共性特征</h3>
+        <p>
+          观察b站的热门内容，可以发现几个共性：一是<strong>节奏明快</strong>，前几秒抓人眼球，信息密度高；二是<strong>情绪共鸣</strong>，无论是搞笑、治愈还是热血，都能引发弹幕互动；三是<strong>社区参与感</strong>，UP主与观众之间形成默契，评论区和弹幕成为内容的延伸。此外，系列化内容更容易沉淀粉丝，如“每周必看”栏目、连载型Vlog、固定企划等，用户会形成定期追更的习惯。
+        </p>
+        <div class="highlight-box">
+          <p>对于内容消费而言，b站的推荐算法结合了用户行为、社交关系与内容标签，首页推荐与热门榜单是发现新内容的主要入口。本页整理的推荐卡片与更新列表，正是对这一生态的编辑化梳理。</p>
+        </div>
+        <h3>适合哪些受众浏览</h3>
+        <p>
+          <strong>追番党</strong>可以关注番剧更新与国创动态；<strong>游戏玩家</strong>可以找到实况攻略与赛事信息；<strong>知识爱好者</strong>能发现深度科普与技能教程；<strong>休闲用户</strong>则可以通过搞笑、美食、生活类内容放松心情。b站的内容多样性意味着几乎每个人都能找到自己的兴趣分区，而本页的价值在于减少信息筛选成本，提供经过筛选的参考列表。
+        </p>
+        <h3>与同类平台的内容差异</h3>
+        <p>
+          相比传统长视频平台，b站更强调<strong>社区氛围与创作者生态</strong>。弹幕文化让观看从个人行为变为集体体验，投币与收藏机制鼓励优质内容产出。与短视频平台相比，b站的中长视频内容更适合深度消费，知识区与纪录片区的平均时长更长，信息密度更高。这种差异使得b站在年轻用户中形成了独特的文化认同感。
+        </p>
+        <h3>读者搜索“b站”时通常想了解什么</h3>
+        <p>
+          搜索b站相关内容的用户，需求通常集中在：近期热门番剧与国创推荐、头部UP主的最新作品、游戏赛事直播入口、知识区值得关注的创作者、以及b站社区的热门梗与弹幕文化。本页从这些需求出发，通过推荐卡片、更新列表与分类入口，尽量覆盖上述搜索意图，帮助用户快速定位感兴趣的内容。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 体验指南 ========== -->
+  <section class="sec-padding" id="experience" style="background:var(--bg-soft);">
+    <div class="container">
+      <div class="sec-header">
+        <h2 class="sec-title">浏览体验指南</h2>
+        <span class="sec-desc">如何高效使用本专题页</span>
+      </div>
+      <div class="grid-3">
+        <div class="card" style="padding:24px;">
+          <h4 style="font-size:1rem;margin-bottom:8px;">📌 分类清晰</h4>
+          <p style="font-size:0.88rem;color:var(--text-sub);">顶部导航与分类入口将内容划分为番剧、游戏、知识、音乐、影视、生活等板块，点击即可跳转对应区域，减少滚动查找时间。</p>
+        </div>
+        <div class="card" style="padding:24px;">
+          <h4 style="font-size:1rem;margin-bottom:8px;">📱 移动端友好</h4>
+          <p style="font-size:0.88rem;color:var(--text-sub);">页面采用响应式布局，手机端卡片自动折叠为单列，文字大小与间距适配小屏阅读，通勤路上也能轻松浏览。</p>
+        </div>
+        <div class="card" style="padding:24px;">
+          <h4 style="font-size:1rem;margin-bottom:8px;">🔔 更新追踪</h4>
+          <p style="font-size:0.88rem;color:var(--text-sub);">最新更新模块按时间倒序排列，标注番剧集数、直播时间与上新内容，方便追更用户快速了解动态。</p>
+        </div>
+        <div class="card" style="padding:24px;">
+          <h4 style="font-size:1rem;margin-bottom:8px;">💬 社区声音</h4>
+          <p style="font-size:0.88rem;color:var(--text-sub);">用户评论模块汇集了近期观众的真实反馈，涵盖推荐、吐槽与期待，为内容选择提供参考视角。</p>
+        </div>
+        <div class="card" style="padding:24px;">
+          <h4 style="font-size:1rem;margin-bottom:8px;">🔗 关联推荐</h4>
+          <p style="font-size:0.88rem;color:var(--text-sub);">推荐卡片之间形成内容网络，从一部番剧可以延伸至同类作品、UP主其他视频，扩展浏览路径。</p>
+        </div>
+        <div class="card" style="padding:24px;">
+          <h4 style="font-size:1rem;margin-bottom:8px;">⭐ 收藏建议</h4>
+          <p style="font-size:0.88rem;color:var(--text-sub);">建议将本页加入浏览器书签或b站收藏夹，每次需要发现新内容时，打开即可获得编辑整理后的推荐列表。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FAQ ========== -->
+  <section class="sec-padding" id="faq-section">
+    <div class="container">
+      <div class="sec-header">
+        <h2 class="sec-title">常见问题</h2>
+        <span class="sec-desc">关于b站内容消费的典型疑问</span>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q">b站近期有哪些值得追的番剧？</div>
+          <div class="faq-a">近期b站番剧区热门作品包括《时光代理人》第二季、《凡人修仙传》新年番以及国创《灵笼》第二季。此外，每季度引进的日本新番如《咒术回战》续作也保持较高热度。建议关注番剧区的“追番排行”和本页的更新列表，根据个人偏好选择。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">游戏区有哪些值得关注的UP主？</div>
+          <div class="faq-a">游戏区内容风格多样，头部UP主如老番茄、中国BOY、渗透之C君等以实况与搞笑剪辑见长；硬核攻略可关注“黑桐谷歌”；独立游戏推荐可看“谜之声”。此外，b站电竞赛事直播涵盖英雄联盟、DOTA2、CS2等项目，官方直播间与二路解说均有丰富内容。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">知识区适合零基础用户吗？</div>
+          <div class="faq-a">非常适合。b站知识区的内容从入门科普到专业课程均有覆盖，罗翔说刑法、半佛仙人、无穷小亮等UP主擅长用通俗语言讲解复杂概念。零基础用户可以从“知识区热门榜”或“每周必看”栏目入手，按兴趣选择法律、历史、科技、财经等细分方向。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">如何在b站找到高质量纪录片？</div>
+          <div class="faq-a">b站纪录片区拥有大量正版引进与自制内容，包括《人生一串》《守护解放西》《众神之地》等口碑作品。推荐关注纪录片官方账号与“纪录片之家”等UP主，或在本页的分类入口中点击影视纪录片板块，获取编辑整理的片单。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">b站的弹幕文化有什么特点？</div>
+          <div class="faq-a">b站弹幕是用户实时互动的核心形式，具有“打卡”“前方高能”“泪目”“名场面”等固定表达。弹幕不仅增加观看趣味，也形成了社区共识。对于新用户，建议先关闭弹幕体验内容，再开启弹幕感受社区氛围。部分视频还提供弹幕屏蔽等级设置，可自行调节。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">本页的推荐内容会定期更新吗？</div>
+          <div class="faq-a">本页作为b站内容专题页，会根据平台热门趋势与编辑观察进行内容调整。推荐卡片、更新列表与资讯模块均标注了整理时间，建议收藏页面并定期回访，以获取较新的内容参考。注意本页不提供视频播放功能，仅作为内容发现与导航入口。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 用户评论 ========== -->
+  <section class="sec-padding" id="comments" style="background:var(--bg-soft);">
+    <div class="container">
+      <div class="sec-header">
+        <h2 class="sec-title">用户评论</h2>
+        <span class="sec-desc">社区真实声音 · 近30天</span>
+      </div>
+      <div class="comment-list">
+        <div class="comment-item">
+          <div class="comment-avatar" style="background:#f8bbd0;">追</div>
+          <div class="comment-main">
+            <div class="comment-head"><span class="comment-name">追番不熬夜</span><span class="comment-date">2026-11-06</span></div>
+            <p class="comment-text">《时光代理人》第二季真的刀死我了，但就是停不下来，每周必追。b站弹幕氛围很好，高能片段大家一起刷屏。</p>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar" style="background:#b2dfdb;">游</div>
+          <div class="comment-main">
+            <div class="comment-head"><span class="comment-name">游戏区常驻</span><span class="comment-date">2026-11-05</span></div>
+            <p class="comment-text">老番茄的新视频笑死我了，恐怖游戏硬是玩成搞笑游戏。不过最近广告有点多，希望多出点纯享版。</p>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar" style="background:#ffcc80;">罗</div>
+          <div class="comment-main">
+            <div class="comment-head"><span class="comment-name">法学生小张</span><span class="comment-date">2026-11-04</span></div>
+            <p class="comment-text">罗翔老师的新普法系列每期都看，案例讲得透彻，对法考也有帮助。b站知识区真是宝藏。</p>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar" style="background:#ce93d8;">番</div>
+          <div class="comment-main">
+            <div class="comment-head"><span class="comment-name">番剧速递员</span><span class="comment-date">2026-11-03</span></div>
+            <p class="comment-text">《凡人修仙传》新年番质量在线，打斗流畅，就是更新太慢了，攒几集再看比较爽。</p>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar" style="background:#90caf9;">音</div>
+          <div class="comment-main">
+            <div class="comment-head"><span class="comment-name">耳机依赖症</span><span class="comment-date">2026-11-02</span></div>
+            <p class="comment-text">b站音乐区原创古风真的强，最近那个《洛神赋》循环好几天了，编曲和词都很绝。</p>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar" style="background:#f48fb1;">吐</div>
+          <div class="comment-main">
+            <div class="comment-head"><span class="comment-name">理性吐槽君</span><span class="comment-date">2026-11-01</span></div>
+            <p class="comment-text">首页推荐有时候重复率有点高，同一个UP主刷到好几次。不过分类筛选还是好用的，习惯直接去分区看。</p>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar" style="background:#a5d6a7;">知</div>
+          <div class="comment-main">
+            <div class="comment-head"><span class="comment-name">知识区潜水员</span><span class="comment-date">2026-10-31</span></div>
+            <p class="comment-text">半佛的视频每期必看，虽然有些观点比较激进，但信息量很大，适合下饭。</p>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar" style="background:#ffab91;">电</div>
+          <div class="comment-main">
+            <div class="comment-head"><span class="comment-name">电竞老男孩</span><span class="comment-date">2026-10-30</span></div>
+            <p class="comment-text">S16总决赛二路解说太欢乐了，比官方直播间有意思。b站电竞直播画质也稳。</p>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar" style="background:#b0bec5;">纪</div>
+          <div class="comment-main">
+            <div class="comment-head"><span class="comment-name">纪录片收藏家</span><span class="comment-date">2026-10-29</span></div>
+            <p class="comment-text">《人生一串4》终于来了，先导片看了三遍，还是熟悉的味道。b站纪录片资源越来越丰富了。</p>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar" style="background:#f06292;">萌</div>
+          <div class="comment-main">
+            <div class="comment-head"><span class="comment-name">萌新求带</span><span class="comment-date">2026-10-28</span></div>
+            <p class="comment-text">刚注册b站，这个页面帮我快速了解了有哪些分区，收藏了慢慢看。</p>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar" style="background:#a1887f;">剪</div>
+          <div class="comment-main">
+            <div class="comment-head"><span class="comment-name">剪辑爱好者</span><span class="comment-date">2026-10-27</span></div>
+            <p class="comment-text">影视飓风的新片画质绝了，每一帧都能当壁纸。希望多出点幕后制作教程。</p>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar" style="background:#7e57c2;">跨</div>
+          <div class="comment-main">
+            <div class="comment-head"><span class="comment-name">跨年晚会蹲守</span><span class="comment-date">2026-10-26</span></div>
+            <p class="comment-text">每年b站跨年晚会都是必看项目，交响乐团和UP主合作环节最有感觉。</p>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar" style="background:#26a69a;">鬼</div>
+          <div class="comment-main">
+            <div class="comment-head"><span class="comment-name">鬼畜区观众</span><span class="comment-date">2026-10-25</span></div>
+            <p class="comment-text">最近鬼畜区的调教质量有点下滑，希望多一些原创梗，少点重复素材。</p>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar" style="background:#ffb74d;">综</div>
+          <div class="comment-main">
+            <div class="comment-head"><span class="comment-name">综艺追更人</span><span class="comment-date">2026-10-24</span></div>
+            <p class="comment-text">《说唱新世代2》比第一季更炸，选手实力很强，b站自制综艺越来越用心了。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 相关资讯 ========== -->
+  <section class="sec-padding" id="news-section">
+    <div class="container">
+      <div class="sec-header">
+        <h2 class="sec-title">相关资讯</h2>
+        <span class="sec-desc">b站生态动态速览</span>
+      </div>
+      <div class="news-grid">
+        <article class="news-card">
+          <span class="news-date">2026-11-06</span>
+          <h4>b站发布2026年Q3财报：日活用户突破1.2亿</h4>
+          <p>财报显示社区活跃度持续增长，知识区与游戏区贡献主要增量，广告与增值服务收入同比提升。</p>
+        </article>
+        <article class="news-card">
+          <span class="news-date">2026-11-05</span>
+          <h4>国创动画《灵笼》第二季播放量破3亿</h4>
+          <p>科幻题材国创作品热度攀升，制作团队公布幕后花絮，第三季已进入前期筹备阶段。</p>
+        </article>
+        <article class="news-card">
+          <span class="news-date">2026-11-04</span>
+          <h4>b站与多家游戏厂商合作推出云游戏试玩</h4>
+          <p>用户可在b站客户端内直接试玩部分独立游戏，无需下载安装，目前处于限量测试阶段。</p>
+        </article>
+        <article class="news-card">
+          <span class="news-date">2026-11-03</span>
+          <h4>知识区UP主联合发起“科普月”活动</h4>
+          <p>超过200位知识区创作者参与，涵盖天文、生物、法律、经济等领域，活动期间每日更新专题内容。</p>
+        </article>
+        <article class="news-card">
+          <span class="news-date">2026-11-02</span>
+          <h4>b站原创音乐榜十月榜单揭晓</h4>
+          <p>古风原创曲《洛神赋》登顶，电子与国风融合成为本月热门趋势，多位新人UP主上榜。</p>
+        </article>
+        <article class="news-card">
+          <span class="news-date">2026-11-01</span>
+          <h4>2026 b站跨年晚会官宣首批嘉宾</h4>
+          <p>晚会将于12月31日直播，首批嘉宾包括交响乐团、人气UP主与神秘歌手，主题为“时光旋律”。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 页脚 ========== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-col">
+          <h5>b站内容专题</h5>
+          <p>聚合番剧、游戏、知识、音乐、影视等分区热门内容，为b站用户提供内容发现与消费参考。本页为独立编辑整理页面，与b站官方无直接关联。</p>
+        </div>
+        <div class="footer-col">
+          <h5>快速导航</h5>
+          <a href="/#hot-rec">热门推荐</a>
+          <a href="/#latest-update">最新更新</a>
+          <a href="/#deep-analysis">深度解析</a>
+          <a href="/#cat-entry">分类入口</a>
+        </div>
+        <div class="footer-col">
+          <h5>内容分区</h5>
+          <a href="/#cat-entry">番剧国创</a>
+          <a href="/#cat-entry">游戏电竞</a>
+          <a href="/#cat-entry">知识教育</a>
+          <a href="/#cat-entry">音乐舞蹈</a>
+        </div>
+        <div class="footer-col">
+          <h5>友情链接</h5>
+          <p style="font-size:0.82rem;">b站官方 · 番剧专题 · 游戏中心 · 知识社区</p>
+          <p style="font-size:0.82rem;margin-top:8px;">友情链接位（欢迎交换）</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 b站内容专题页 · 编辑整理</span>
+        <span>免责声明：本页内容基于公开信息整理，不构成任何消费建议。</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 简单的 FAQ 手风琴交互 -->
+  <script>
+    (function() {
+      var faqItems = document.querySelectorAll('.faq-item');
+      faqItems.forEach(function(item) {
+        var q = item.querySelector('.faq-q');
+        if (q) {
+          q.addEventListener('click', function() {
+            item.classList.toggle('open');
+          });
+        }
+      });
+    })();
+  </script>
+
+  <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+  </html>
