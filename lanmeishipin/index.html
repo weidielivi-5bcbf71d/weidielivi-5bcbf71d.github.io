@@ -1,0 +1,907 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<title>蓝莓视频-高清视频在线观看_蓝莓视频热门推荐与深度解析</title>
+<meta name="description" content="蓝莓视频提供海量高清视频在线观看，涵盖热门影视、短剧、综艺、动漫、纪录片等类型。本专题页汇总蓝莓视频最新推荐、深度解析、用户评论与常见问题，帮您快速找到想看的内容。">
+<meta name="keywords" content="蓝莓视频,蓝莓视频在线观看,蓝莓视频热门推荐,蓝莓视频高清,蓝莓视频内容解析">
+<style>
+:root{
+  --blush:#f8f0f5;
+  --berry:#9b3e6c;
+  --berry-soft:#c76f9b;
+  --ink:#221b1f;
+  --paper:#ffffff;
+  --muted:#6e5f67;
+  --line:#e9dce3;
+  --card-shadow:0 8px 24px rgba(80, 30, 55, 0.07);
+  --radius:18px;
+  --radius-sm:12px;
+  --max:1200px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: #fcf8fa;
+  color: var(--ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+ul{list-style:none;}
+.wrap{
+  max-width: var(--max);
+  margin:0 auto;
+  padding:0 20px;
+}
+/* header */
+.site-header{
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom:1px solid var(--line);
+  position: sticky;
+  top:0;
+  z-index: 80;
+}
+.nav-bar{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  height:68px;
+  gap:20px;
+}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:700;
+  font-size:20px;
+  letter-spacing:-0.3px;
+  color: var(--berry);
+}
+.logo-mark{
+  width:32px;height:32px;
+  border-radius:50%;
+  background: radial-gradient(circle at 30% 30%, #f0b8d0, #9b3e6c);
+  box-shadow: 0 2px 8px rgba(155,62,108,0.3);
+  flex-shrink:0;
+}
+.nav-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px 22px;
+  font-size:14px;
+  font-weight:500;
+  color: var(--muted);
+}
+.nav-links a{
+  padding:5px 2px;
+  border-bottom:2px solid transparent;
+  transition: all .2s;
+}
+.nav-links a:hover{
+  color: var(--berry);
+  border-bottom-color: var(--berry-soft);
+}
+.nav-actions{
+  display:flex;
+  gap:12px;
+}
+.btn-ghost{
+  border:1px solid var(--line);
+  background: #fff;
+  border-radius: 999px;
+  padding:8px 18px;
+  font-size:13px;
+  font-weight:600;
+  color: var(--berry);
+  transition: all .2s;
+  cursor:default;
+}
+.btn-ghost:hover{
+  background: var(--blush);
+  border-color: var(--berry-soft);
+}
+.btn-solid{
+  background: var(--berry);
+  color:#fff;
+  border:none;
+  border-radius: 999px;
+  padding:9px 20px;
+  font-size:13px;
+  font-weight:600;
+  transition: all .2s;
+  cursor:default;
+  box-shadow: 0 4px 10px rgba(155,62,108,0.2);
+}
+.btn-solid:hover{
+  background: #7d2f58;
+  box-shadow: 0 6px 14px rgba(155,62,108,0.3);
+}
+/* banner */
+.hero{
+  padding:48px 0 36px;
+  background: linear-gradient(135deg, #fdf2f8 0%, #f9e9f1 100%);
+  position:relative;
+  overflow:hidden;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  right:-80px;top:-80px;
+  width:360px;height:360px;
+  background: radial-gradient(circle, rgba(199,111,155,0.18), transparent 70%);
+  border-radius:50%;
+  pointer-events:none;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap:40px;
+  align-items:center;
+}
+.hero h1{
+  font-size: clamp(28px, 4.2vw, 46px);
+  line-height:1.2;
+  letter-spacing:-0.5px;
+  color: #3b1e2c;
+  margin-bottom:16px;
+}
+.hero h1 span{
+  color: var(--berry);
+  background: linear-gradient(120deg, var(--berry) 30%, #c76f9b 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero p{
+  color: #5b4550;
+  font-size:16px;
+  margin-bottom:22px;
+  max-width: 540px;
+}
+.search-row{
+  display:flex;
+  background:#fff;
+  border-radius: 999px;
+  box-shadow: 0 6px 20px rgba(100, 40, 70, 0.08);
+  padding:5px;
+  max-width:500px;
+  border:1px solid var(--line);
+}
+.search-row input{
+  flex:1;
+  border:none;
+  outline:none;
+  background: transparent;
+  padding:10px 16px;
+  font-size:14px;
+  border-radius:999px;
+  color: var(--ink);
+}
+.search-row input::placeholder{
+  color: #b29ba7;
+}
+.search-row button{
+  background: var(--berry);
+  color:#fff;
+  border:none;
+  border-radius:999px;
+  padding:10px 24px;
+  font-size:14px;
+  font-weight:600;
+  cursor:default;
+}
+.hero-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:20px;
+}
+.hero-tags a{
+  background: #fff;
+  border:1px solid var(--line);
+  border-radius:30px;
+  padding:6px 16px;
+  font-size:13px;
+  color:#4e3843;
+  font-weight:500;
+  transition: all .15s;
+}
+.hero-tags a:hover{
+  border-color: var(--berry-soft);
+  background: var(--blush);
+}
+.hero-cover{
+  background: linear-gradient(145deg, #d8b1c9, #a5587f);
+  border-radius: 28px;
+  height: 260px;
+  box-shadow: 0 20px 40px rgba(120, 50, 80, 0.18);
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  padding:24px;
+  color:#fff;
+  position:relative;
+  overflow:hidden;
+}
+.hero-cover::before{
+  content:"蓝莓视频";
+  position:absolute;
+  top:20px;left:24px;
+  font-size:15px;
+  font-weight:700;
+  opacity:.9;
+  letter-spacing:2px;
+}
+.hero-cover .cover-title{
+  font-size:24px;
+  font-weight:700;
+  margin-bottom:6px;
+  text-shadow:0 2px 12px rgba(0,0,0,0.2);
+}
+.hero-cover .cover-meta{
+  font-size:14px;
+  opacity:.9;
+}
+/* section common */
+.section{
+  padding:44px 0;
+  border-bottom:1px solid var(--line);
+}
+.section:last-of-type{border-bottom:none;}
+.sec-head{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  margin-bottom:26px;
+  flex-wrap:wrap;
+  gap:10px;
+}
+.sec-title{
+  font-size:24px;
+  font-weight:700;
+  letter-spacing:-0.3px;
+  color: #2d1c24;
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.sec-title::before{
+  content:"";
+  width:5px;height:24px;
+  background: var(--berry);
+  border-radius:4px;
+}
+.sec-more{
+  font-size:14px;
+  color: var(--berry);
+  font-weight:600;
+  background: #faeef4;
+  padding:6px 16px;
+  border-radius:30px;
+}
+/* cards */
+.card-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap:24px;
+}
+.card{
+  background: var(--paper);
+  border-radius: var(--radius);
+  padding:20px;
+  box-shadow: var(--card-shadow);
+  border:1px solid var(--line);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 16px 30px rgba(120, 50, 80, 0.12);
+}
+.card-tag{
+  font-size:12px;
+  font-weight:600;
+  color: var(--berry);
+  background: #faeef4;
+  border-radius:20px;
+  padding:3px 12px;
+  display:inline-block;
+  margin-bottom:10px;
+}
+.card-title{
+  font-size:17px;
+  font-weight:700;
+  margin-bottom:6px;
+  line-height:1.3;
+}
+.card-desc{
+  font-size:13.5px;
+  color:#6b515d;
+  margin-bottom:12px;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+.card-meta{
+  display:flex;
+  justify-content:space-between;
+  font-size:12.5px;
+  color:#9d8490;
+  border-top:1px solid #f3e9ee;
+  padding-top:10px;
+}
+/* updates list */
+.update-list{
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+}
+.update-item{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 0;
+  border-bottom:1px dashed var(--line);
+  flex-wrap:wrap;
+  gap:8px;
+}
+.update-item:last-child{border-bottom:none;}
+.update-name{
+  font-weight:600;
+  font-size:15px;
+  color: #2d1c24;
+}
+.update-desc{
+  font-size:13.5px;
+  color:#806a76;
+  flex:1;
+  margin-left:22px;
+}
+.update-time{
+  font-size:12px;
+  color:#b09aa6;
+  background: #f9f2f6;
+  padding:3px 12px;
+  border-radius:20px;
+}
+/* categories */
+.cat-grid{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap:16px;
+}
+.cat-item{
+  background: #fff;
+  border-radius: var(--radius-sm);
+  padding:18px 16px;
+  text-align:center;
+  font-weight:600;
+  font-size:15px;
+  border:1px solid var(--line);
+  transition: all .15s;
+  color:#3d2531;
+}
+.cat-item:hover{
+  background: #faeef4;
+  border-color: var(--berry-soft);
+  color: var(--berry);
+}
+.cat-item span{
+  display:block;
+  font-size:12px;
+  font-weight:400;
+  color:#a78a98;
+  margin-top:4px;
+}
+/* deep analysis */
+.article-body{
+  max-width: 860px;
+  margin:0 auto;
+  font-size:16px;
+  color:#3b2b33;
+}
+.article-body h3{
+  font-size:20px;
+  margin:28px 0 10px;
+  color:#3b1e2c;
+  font-weight:700;
+}
+.article-body p{
+  margin-bottom:18px;
+  line-height:1.8;
+  color:#4b3842;
+}
+.article-body strong{
+  color: var(--berry);
+  font-weight:600;
+}
+/* faq */
+.faq-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
+}
+.faq-card{
+  background: #fff;
+  border-radius: var(--radius-sm);
+  padding:20px 22px;
+  border:1px solid var(--line);
+}
+.faq-q{
+  font-weight:700;
+  font-size:16px;
+  color:#3b1e2c;
+  margin-bottom:8px;
+  display:flex;
+  gap:10px;
+}
+.faq-q::before{
+  content:"Q";
+  color: var(--berry);
+  font-weight:800;
+}
+.faq-a{
+  font-size:14.5px;
+  color:#604c57;
+  line-height:1.75;
+}
+/* comments */
+.comment-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap:18px;
+}
+.comment-item{
+  background: #fff;
+  border-radius: var(--radius-sm);
+  padding:16px 18px;
+  border:1px solid var(--line);
+  font-size:14px;
+  color:#45343d;
+}
+.comment-head{
+  display:flex;
+  justify-content:space-between;
+  font-size:12px;
+  color:#b29ba7;
+  margin-bottom:6px;
+}
+.comment-user{
+  font-weight:600;
+  color:#5b3e4c;
+}
+.comment-text{
+  margin-bottom:6px;
+  line-height:1.65;
+}
+/* news */
+.news-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:22px;
+}
+.news-card{
+  background:#fff;
+  border-radius: var(--radius);
+  padding:20px;
+  border:1px solid var(--line);
+  box-shadow: var(--card-shadow);
+}
+.news-date{
+  font-size:12px;
+  color:#b29ba7;
+  margin-bottom:6px;
+}
+.news-title{
+  font-weight:700;
+  font-size:16px;
+  margin-bottom:8px;
+  line-height:1.4;
+}
+.news-summary{
+  font-size:13.5px;
+  color:#6b515d;
+  line-height:1.6;
+}
+/* footer */
+.site-footer{
+  background: #2d1c24;
+  color: #d9c6d1;
+  padding:48px 0 30px;
+  margin-top:20px;
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap:30px;
+  margin-bottom:34px;
+}
+.footer-brand .logo{
+  color:#f5e2ec;
+  margin-bottom:12px;
+}
+.footer-brand p{
+  font-size:13px;
+  color:#b99baa;
+  line-height:1.7;
+}
+.footer-col h4{
+  color:#fff;
+  font-size:14px;
+  margin-bottom:12px;
+  font-weight:600;
+}
+.footer-col a{
+  display:block;
+  font-size:13px;
+  color:#b99baa;
+  margin-bottom:8px;
+  transition: color .15s;
+}
+.footer-col a:hover{
+  color:#fff;
+}
+.footer-copy{
+  border-top:1px solid #4d3441;
+  padding-top:22px;
+  font-size:12.5px;
+  color:#9d7f8e;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:10px;
+}
+/* responsive */
+@media (max-width: 900px){
+  .hero-grid{grid-template-columns:1fr;}
+  .hero-cover{height:200px;}
+  .cat-grid{grid-template-columns:repeat(2,1fr);}
+  .faq-grid{grid-template-columns:1fr;}
+  .news-grid{grid-template-columns:1fr 1fr;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+}
+@media (max-width: 640px){
+  .nav-links{display:none;}
+  .card-grid{grid-template-columns:1fr;}
+  .news-grid{grid-template-columns:1fr;}
+  .cat-grid{grid-template-columns:1fr 1fr;}
+  .footer-grid{grid-template-columns:1fr;}
+  .update-desc{margin-left:0;width:100%;}
+  .update-item{padding:12px 0;}
+  .hero{padding:32px 0 28px;}
+  .section{padding:32px 0;}
+  .search-row input{padding:8px 12px;font-size:13px;}
+  .search-row button{padding:8px 16px;font-size:13px;}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap nav-bar">
+    <a href="/#home" class="logo" aria-label="蓝莓视频">
+      <span class="logo-mark"></span>
+      <span>蓝莓视频</span>
+    </a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="/#hot">热门推荐</a>
+      <a href="/#updates">最新更新</a>
+      <a href="/#categories">分类入口</a>
+      <a href="/#deep">深度解析</a>
+      <a href="/#faq">常见问题</a>
+      <a href="/#comments">用户评论</a>
+      <a href="/#news">相关资讯</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="btn-ghost" type="button">登录</button>
+      <button class="btn-solid" type="button">开启观看</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- 首屏 Banner -->
+  <section class="hero" id="home">
+    <div class="wrap hero-grid">
+      <div>
+        <h1><span>蓝莓视频</span>，高清视频在线观看与热门内容发现</h1>
+        <p>汇集影视、短剧、动漫、综艺、纪录片等多元内容，每日更新热门看点与深度解析。来蓝莓视频，轻松找到下一部想看的作品。</p>
+        <div class="search-row">
+          <input type="text" placeholder="搜索蓝莓视频热门内容、剧名或关键词" aria-label="搜索框">
+          <button type="button">搜索</button>
+        </div>
+        <div class="hero-tags">
+          <a href="/#hot">热播影视</a>
+          <a href="/#hot">精品短剧</a>
+          <a href="/#hot">人气动漫</a>
+          <a href="/#hot">高分纪录片</a>
+          <a href="/#hot">爆款综艺</a>
+          <a href="/#updates">今日更新</a>
+          <a href="/#deep">编辑精选</a>
+        </div>
+      </div>
+      <div class="hero-cover" aria-hidden="true">
+        <div class="cover-title">蓝莓视频 · 本周焦点</div>
+        <div class="cover-meta">《漫城小厨》第2季 · 正在热播</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 内容简介 -->
+  <section class="section" id="intro">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="sec-title">内容简介 · 为什么关注蓝莓视频</h2>
+        <a href="/#hot" class="sec-more">查看推荐 →</a>
+      </div>
+      <div class="article-body" style="max-width:100%;">
+        <p>蓝莓视频是一个以高清视频内容为核心的在线观看与发现平台，覆盖电影、电视剧、短剧、动漫、综艺、纪录片等多种类型。无论你是想追更热门剧集，还是寻找下饭短剧、放松心情的综艺，蓝莓视频都提供了清晰的分类和便捷的浏览路径。本专题页围绕蓝莓视频的近期热门内容、更新动态、深度解析与用户真实反馈进行整理，帮助新老观众快速了解平台当前值得关注的作品。</p>
+        <p>对于喜欢深度内容的观众，蓝莓视频同样提供了纪录片和专题解析栏目；对于追求轻松节奏的用户，短剧和搞笑综艺是很好的选择。页面中包含了热门推荐清单、最新更新列表、分类入口、深度解析文章、常见问题答疑以及来自用户的真实评论，适合在挑选内容前快速浏览，也适合收藏后定期查看更新。</p>
+        <p>蓝莓视频的页面设计注重阅读与筛选体验，分类清晰、卡片信息直观，移动端浏览同样友好。如果你正在寻找一个能够兼顾热门与口碑、更新及时的视频内容站点，蓝莓视频值得加入你的日常浏览清单。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 热门推荐卡片 -->
+  <section class="section" id="hot">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="sec-title">热门内容推荐 · 大家都在看</h2>
+        <a href="/#updates" class="sec-more">更多更新 →</a>
+      </div>
+      <div class="card-grid">
+        <div class="card">
+          <span class="card-tag">热播剧集</span>
+          <div class="card-title">《漫城小厨》第二季</div>
+          <div class="card-desc">美食与治愈并行，小城故事温暖回归。本季新增角色与美食线，适合下饭观看。</div>
+          <div class="card-meta"><span>热度 9.6万</span><span>更新至 12 集</span></div>
+        </div>
+        <div class="card">
+          <span class="card-tag">精品短剧</span>
+          <div class="card-title">《逆风翻盘》</div>
+          <div class="card-desc">每集3分钟，节奏明快反转不断。职场逆袭题材，爽点密集，适合碎片时间。</div>
+          <div class="card-meta"><span>热度 8.2万</span><span>全 24 集</span></div>
+        </div>
+        <div class="card">
+          <span class="card-tag">人气动漫</span>
+          <div class="card-title">《星海旅人》</div>
+          <div class="card-desc">科幻冒险题材，画风细腻，声优阵容强大。讲述少年穿越星海的成长故事。</div>
+          <div class="card-meta"><span>评分 9.4</span><span>更新至 8 话</span></div>
+        </div>
+        <div class="card">
+          <span class="card-tag">高分纪录片</span>
+          <div class="card-title">《山河食记》</div>
+          <div class="card-desc">走访各地传统美食与手艺人，画面精美，人文气息浓厚，适合静心观看。</div>
+          <div class="card-meta"><span>评分 9.7</span><span>全 6 集</span></div>
+        </div>
+        <div class="card">
+          <span class="card-tag">爆款综艺</span>
+          <div class="card-title">《周末大挑战》</div>
+          <div class="card-desc">明星组队闯关，笑点密集。最新一期加入户外竞技环节，弹幕互动火热。</div>
+          <div class="card-meta"><span>热度 7.8万</span><span>每周六更新</span></div>
+        </div>
+        <div class="card">
+          <span class="card-tag">口碑电影</span>
+          <div class="card-title">《南方来信》</div>
+          <div class="card-desc">文艺剧情片，讲述返乡青年的情感与选择。镜头语言细腻，配乐耐听。</div>
+          <div class="card-meta"><span>评分 9.2</span><span>已上线</span></div>
+        </div>
+        <div class="card">
+          <span class="card-tag">悬疑短剧</span>
+          <div class="card-title">《迷雾追踪》</div>
+          <div class="card-desc">每集一个悬念，节奏紧凑。适合喜欢推理和反转的观众，建议连续观看。</div>
+          <div class="card-meta"><span>热度 6.5万</span><span>全 18 集</span></div>
+        </div>
+        <div class="card">
+          <span class="card-tag">亲子动画</span>
+          <div class="card-title">《小蓝莓探险队》</div>
+          <div class="card-desc">寓教于乐的儿童动画，色彩明亮，故事简单有趣，适合亲子共看。</div>
+          <div class="card-meta"><span>评分 9.0</span><span>更新至 30 集</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 最新更新 -->
+  <section class="section" id="updates">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="sec-title">最新更新 · 今日追更动态</h2>
+        <span style="font-size:13px;color:#a78a98;">2026年11月7日</span>
+      </div>
+      <div class="update-list">
+        <div class="update-item"><span class="update-name">《漫城小厨》第二季</span><span class="update-desc">第8集已上线，小城美食节开启，新角色登场</span><span class="update-time">2小时前</span></div>
+        <div class="update-item"><span class="update-name">《逆风翻盘》</span><span class="update-desc">更新第16集，女主面临关键抉择，反转升级</span><span class="update-time">3小时前</span></div>
+        <div class="update-item"><span class="update-name">《星海旅人》</span><span class="update-desc">第9话更新，新地图解锁，战斗画面获好评</span><span class="update-time">5小时前</span></div>
+        <div class="update-item"><span class="update-name">《周末大挑战》</span><span class="update-desc">今晚20:00直播新一期，嘉宾阵容公布</span><span class="update-time">6小时前</span></div>
+        <div class="update-item"><span class="update-name">《山河食记》</span><span class="update-desc">第5集上线，探访西南古法红糖制作</span><span class="update-time">8小时前</span></div>
+        <div class="update-item"><span class="update-name">《迷雾追踪》</span><span class="update-desc">全18集已完结，大结局引发讨论</span><span class="update-time">昨天</span></div>
+        <div class="update-item"><span class="update-name">《南方来信》</span><span class="update-desc">上线导演解说版，新增幕后花絮</span><span class="update-time">昨天</span></div>
+        <div class="update-item"><span class="update-name">《小蓝莓探险队》</span><span class="update-desc">更新第31集，新朋友加入探险队</span><span class="update-time">11月6日</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 分类入口 -->
+  <section class="section" id="categories">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="sec-title">分类入口 · 按类型快速筛选</h2>
+      </div>
+      <div class="cat-grid">
+        <a href="/#hot" class="cat-item">电影 <span>剧情 · 文艺 · 悬疑</span></a>
+        <a href="/#hot" class="cat-item">电视剧 <span>热播 · 都市 · 古装</span></a>
+        <a href="/#hot" class="cat-item">短剧 <span>爽剧 · 反转 · 甜宠</span></a>
+        <a href="/#hot" class="cat-item">动漫 <span>热血 · 治愈 · 科幻</span></a>
+        <a href="/#hot" class="cat-item">综艺 <span>真人秀 · 竞技 · 访谈</span></a>
+        <a href="/#hot" class="cat-item">纪录片 <span>人文 · 自然 · 美食</span></a>
+        <a href="/#hot" class="cat-item">少儿 <span>动画 · 益智 · 亲子</span></a>
+        <a href="/#hot" class="cat-item">精选专题 <span>编辑推荐 · 合集</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 深度解析 -->
+  <section class="section" id="deep">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="sec-title">深度解析 · 蓝莓视频近期内容观察</h2>
+      </div>
+      <div class="article-body">
+        <h3>题材与内容特点</h3>
+        <p>蓝莓视频近期的内容排布呈现出明显的“多元分层”特点。头部的热播剧集和电影保持了较高的制作水准，例如《漫城小厨》第二季延续了第一季的治愈系美食路线，同时在人物关系上做了更丰富的拓展，新加入的配角线让故事更有生活气息。短剧板块则持续发力，《逆风翻盘》《迷雾追踪》等作品以密集的爽点和悬念吸引观众，单集时长控制在3-8分钟，非常适合通勤或碎片时间观看。</p>
+        <p>动漫方面，《星海旅人》凭借精良的作画和配乐在平台内获得了不错的口碑，声优阵容也成为讨论焦点。纪录片频道则坚持真实与人文视角，《山河食记》用食物串联起地域文化，画面质感在同类内容中较为突出。</p>
+        <h3>适合人群与观看体验</h3>
+        <p>从受众角度看，蓝莓视频的内容覆盖了较广的年龄段。喜欢轻松下饭的观众可以从热播剧集和综艺入手；追求强节奏的年轻用户会偏爱短剧和悬疑内容；亲子家庭则有专门的少儿动画板块。平台在移动端的卡片信息密度适中，分类标签清晰，用户不需要太多学习成本就能找到想看的内容。</p>
+        <p>值得一提的是，蓝莓视频的更新列表采用了时间标注和内容摘要结合的方式，观众可以快速判断哪些内容值得追更。对于喜欢收藏的用户，页面中的分类入口和推荐卡片形成了多条浏览路径，方便从一个内容跳到另一个同类内容，减少寻找成本。</p>
+        <h3>同类内容比较与搜索意图</h3>
+        <p>与一些单一类型的视频平台相比，蓝莓视频的专题页更像一个内容发现入口，既有热门清单也有深度解析，适合那些“想看点什么但还没确定”的用户。搜索“蓝莓视频”的人通常希望找到平台的热门推荐、最近更新或者观看入口，本页面通过热门推荐、最新更新和分类入口直接回应了这些需求。同时，FAQ和评论区域也提供了真实用户视角的补充，帮助新用户判断内容是否合口味。</p>
+        <p>整体来看，蓝莓视频在内容广度与更新频率上表现稳定，适合作为日常视频消费的备选站之一。如果你还没有明确的目标，建议先浏览本页的热门推荐和分类入口，再根据兴趣深入。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="sec-title">常见问题 · 关于蓝莓视频</h2>
+      </div>
+      <div class="faq-grid">
+        <div class="faq-card">
+          <div class="faq-q">蓝莓视频主要提供哪些类型的内容？</div>
+          <div class="faq-a">蓝莓视频涵盖电影、电视剧、短剧、动漫、综艺、纪录片和少儿动画等多个类型。热播剧集和精品短剧是目前更新最频繁的板块，纪录片和电影则偏向口碑积累，适合按兴趣挑选。</div>
+        </div>
+        <div class="faq-card">
+          <div class="faq-q">想追更短剧，从哪一部开始比较合适？</div>
+          <div class="faq-a">如果偏好职场逆袭和快节奏，可以试试《逆风翻盘》；喜欢悬疑推理的话《迷雾追踪》更对口味。两部都是短剧形式，单集时间短，适合碎片时间观看，建议根据题材偏好选择。</div>
+        </div>
+        <div class="faq-card">
+          <div class="faq-q">蓝莓视频的纪录片值得看吗？</div>
+          <div class="faq-a">近期上线的《山河食记》口碑不错，画面精美、人文气息浓，适合喜欢美食或地域文化的观众。纪录片板块整体走精品路线，数量不算多但制作较为用心。</div>
+        </div>
+        <div class="faq-card">
+          <div class="faq-q">蓝莓视频适合亲子一起看吗？</div>
+          <div class="faq-a">平台有专门的少儿板块，例如《小蓝莓探险队》这类动画内容色彩明亮、故事简单，适合亲子共看。不过建议家长提前浏览内容简介，确认是否符合孩子的年龄段。</div>
+        </div>
+        <div class="faq-card">
+          <div class="faq-q">蓝莓视频的更新频率怎么样？</div>
+          <div class="faq-a">热播剧集和短剧基本保持每日或每周更新，综艺多为周更，纪录片和电影上线时间不固定。页面中的“最新更新”列表会标注时间，方便追踪。</div>
+        </div>
+        <div class="faq-card">
+          <div class="faq-q">除了蓝莓视频，有类似的平台推荐吗？</div>
+          <div class="faq-a">同类内容平台各有侧重，蓝莓视频的优势在于类型覆盖较广且专题聚合清晰。如果偏好某一垂类，可以结合其他平台一起使用，本页推荐卡片也提供了同类型内容的参考。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 用户评论 -->
+  <section class="section" id="comments">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="sec-title">用户评论 · 真实观感交流</h2>
+      </div>
+      <div class="comment-grid">
+        <div class="comment-item"><div class="comment-head"><span class="comment-user">晚风与橙</span><span>11月6日</span></div><div class="comment-text">《漫城小厨》第二季真的适合下饭，美食镜头拍得很有食欲，新角色也不突兀。</div></div>
+        <div class="comment-item"><div class="comment-head"><span class="comment-user">追剧小马达</span><span>11月5日</span></div><div class="comment-text">短剧《逆风翻盘》看到第16集，节奏是真快，不过有些反转稍微有点硬，总体还是爽的。</div></div>
+        <div class="comment-item"><div class="comment-head"><span class="comment-user">星海不迷路</span><span>11月5日</span></div><div class="comment-text">《星海旅人》第9话打斗作画可以，配乐也很燃。希望后面别崩，目前追得很开心。</div></div>
+        <div class="comment-item"><div class="comment-head"><span class="comment-user">纪录片爱好者</span><span>11月4日</span></div><div class="comment-text">《山河食记》拍得挺有质感，红糖那集看完想去当地看看。就是集数有点少，不够看。</div></div>
+        <div class="comment-item"><div class="comment-head"><span class="comment-user">周末不加班</span><span>11月4日</span></div><div class="comment-text">《周末大挑战》新一期笑点挺密，嘉宾放得开，适合周末放松看。</div></div>
+        <div class="comment-item"><div class="comment-head"><span class="comment-user">蓝莓小粉丝</span><span>11月3日</span></div><div class="comment-text">页面分类挺清楚的，找片子方便。希望短剧能多上点新片，最近有点剧荒。</div></div>
+        <div class="comment-item"><div class="comment-head"><span class="comment-user">迷雾侦探</span><span>11月3日</span></div><div class="comment-text">《迷雾追踪》结局有点仓促，感觉很多线没交代完。前面是真的精彩，可惜了。</div></div>
+        <div class="comment-item"><div class="comment-head"><span class="comment-user">半糖主义</span><span>11月2日</span></div><div class="comment-text">用手机看蓝莓视频加载挺快的，卡片信息也直观，比之前用的平台顺手些。</div></div>
+        <div class="comment-item"><div class="comment-head"><span class="comment-user">南方以南</span><span>11月2日</span></div><div class="comment-text">《南方来信》导演解说版多了不少细节，文艺片爱好者可以看看，镜头确实美。</div></div>
+        <div class="comment-item"><div class="comment-head"><span class="comment-user">动画宅</span><span>11月1日</span></div><div class="comment-text">少儿动画做得挺用心的，画面干净，故事也适合小孩看，希望多更新。</div></div>
+        <div class="comment-item"><div class="comment-head"><span class="comment-user">今天看什么</span><span>10月31日</span></div><div class="comment-text">每次不知道看什么就来蓝莓视频翻翻推荐，分类和标签挺实用的，能省时间。</div></div>
+        <div class="comment-item"><div class="comment-head"><span class="comment-user">冷面笑匠</span><span>10月30日</span></div><div class="comment-text">综艺整体质量还行，不过有时候剪辑有点跳，希望后期能更流畅些。</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 相关资讯 -->
+  <section class="section" id="news">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="sec-title">相关资讯 · 蓝莓视频动态速览</h2>
+      </div>
+      <div class="news-grid">
+        <div class="news-card">
+          <div class="news-date">2026年11月7日</div>
+          <div class="news-title">蓝莓视频本周片单更新：《漫城小厨》领跑热度榜</div>
+          <div class="news-summary">本周蓝莓视频热度榜出炉，《漫城小厨》第二季稳居第一，短剧《逆风翻盘》紧随其后。平台同步上线多部类型新作。</div>
+        </div>
+        <div class="news-card">
+          <div class="news-date">2026年11月6日</div>
+          <div class="news-title">《星海旅人》第9话播出，制作组透露后续剧情走向</div>
+          <div class="news-summary">人气动漫《星海旅人》更新后引发讨论，制作组在社交平台表示后续将深化角色关系，并保持高水准作画。</div>
+        </div>
+        <div class="news-card">
+          <div class="news-date">2026年11月5日</div>
+          <div class="news-title">蓝莓视频纪录片频道上新，《山河食记》口碑持续走高</div>
+          <div class="news-summary">《山河食记》上线两周，平台内评分稳定在9.7，美食与人文结合的叙事方式获得较多好评，适合安静观看。</div>
+        </div>
+        <div class="news-card">
+          <div class="news-date">2026年11月4日</div>
+          <div class="news-title">短剧《迷雾追踪》完结，观众讨论大结局留白</div>
+          <div class="news-summary">《迷雾追踪》全18集完结，结局部分观众认为略显仓促，但整体悬念设置和节奏受到认可，平台内讨论热度不减。</div>
+        </div>
+        <div class="news-card">
+          <div class="news-date">2026年11月3日</div>
+          <div class="news-title">《周末大挑战》新一期今晚播出，户外竞技环节升级</div>
+          <div class="news-summary">综艺《周末大挑战》今晚更新，本期加入户外闯关内容，嘉宾互动频繁，适合周末放松观看。</div>
+        </div>
+        <div class="news-card">
+          <div class="news-date">2026年11月2日</div>
+          <div class="news-title">蓝莓视频移动端体验优化，分类与搜索更直观</div>
+          <div class="news-summary">蓝莓视频近期对页面布局进行了微调，分类入口和搜索框位置更醒目，移动端浏览和筛选效率有所提升。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo" style="color:#f5e2ec;">
+          <span class="logo-mark"></span>
+          <span>蓝莓视频</span>
+        </div>
+        <p>蓝莓视频专题页提供热门推荐、最新更新、深度解析与用户评论，帮助您发现值得观看的高清视频内容。</p>
+      </div>
+      <div class="footer-col">
+        <h4>快速导航</h4>
+        <a href="/#hot">热门推荐</a>
+        <a href="/#updates">最新更新</a>
+        <a href="/#categories">分类入口</a>
+        <a href="/#deep">深度解析</a>
+      </div>
+      <div class="footer-col">
+        <h4>内容分类</h4>
+        <a href="/#hot">电影</a>
+        <a href="/#hot">电视剧</a>
+        <a href="/#hot">短剧</a>
+        <a href="/#hot">动漫</a>
+      </div>
+      <div class="footer-col">
+        <h4>友情链接</h4>
+        <a href="/#home">蓝莓视频首页</a>
+        <a href="/#faq">常见问题</a>
+        <a href="/#news">资讯动态</a>
+        <a href="/#comments">用户评论</a>
+      </div>
+    </div>
+    <div class="footer-copy">
+      <span>© 2026 蓝莓视频 · 内容专题页</span>
+      <span>免责声明：本页为内容推荐与信息聚合页面，具体内容以实际平台为准。</span>
+    </div>
+  </div>
+</footer>
+</body>
+  </html>
