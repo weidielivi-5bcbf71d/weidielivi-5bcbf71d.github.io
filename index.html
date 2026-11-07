@@ -1,0 +1,1049 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>番茄小说网-免费小说阅读网_热门小说排行榜与在线阅读</title>
+  <meta name="description" content="番茄小说网是免费小说阅读平台，提供玄幻、都市、言情、科幻等海量热门小说在线阅读。本站汇总番茄小说网热门榜单、最新更新、深度书评与读者互动，帮你快速找到好看的小说，畅享阅读乐趣。">
+  <meta name="keywords" content="番茄小说网,免费小说阅读网,热门小说排行榜,番茄小说在线阅读,网络小说推荐">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23f97316'/%3E%3Ctext x='50' y='68' font-size='58' text-anchor='middle' fill='white' font-family='sans-serif'%3E番%3C/text%3E%3C/svg%3E">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    :root {
+      --tomato-primary: #f97316;
+      --tomato-primary-dark: #ea580c;
+      --tomato-secondary: #fb923c;
+      --tomato-bg: #fef9f5;
+      --tomato-card-bg: #ffffff;
+      --tomato-text: #1f2937;
+      --tomato-text-light: #6b7280;
+      --tomato-border: #f0e5dc;
+      --tomato-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+      --tomato-shadow-hover: 0 20px 30px -10px rgba(249, 115, 22, 0.15);
+      --tomato-radius: 20px;
+      --tomato-radius-sm: 12px;
+      --tomato-max-width: 1200px;
+    }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      background-color: var(--tomato-bg);
+      color: var(--tomato-text);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    ul {
+      list-style: none;
+    }
+    .container {
+      max-width: var(--tomato-max-width);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    /* 导航 */
+    .nav-bar {
+      background: #ffffff;
+      border-bottom: 1px solid var(--tomato-border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 22px;
+      color: var(--tomato-primary);
+    }
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--tomato-primary), var(--tomato-secondary));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 22px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-size: 15px;
+      font-weight: 500;
+    }
+    .nav-links a {
+      color: var(--tomato-text);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover {
+      color: var(--tomato-primary);
+    }
+    .nav-search {
+      display: flex;
+      align-items: center;
+      background: var(--tomato-bg);
+      border-radius: 30px;
+      padding: 4px 4px 4px 18px;
+      border: 1px solid var(--tomato-border);
+    }
+    .nav-search input {
+      border: none;
+      background: transparent;
+      outline: none;
+      font-size: 14px;
+      width: 180px;
+      color: var(--tomato-text);
+    }
+    .nav-search button {
+      background: var(--tomato-primary);
+      border: none;
+      color: white;
+      padding: 8px 20px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .nav-search button:hover {
+      background: var(--tomato-primary-dark);
+    }
+    /* 移动端菜单 */
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 26px;
+      color: var(--tomato-text);
+      cursor: pointer;
+    }
+    /* Banner */
+    .hero-section {
+      background: linear-gradient(145deg, #fff7ed 0%, #ffedd5 100%);
+      padding: 60px 0 50px;
+      border-bottom: 1px solid var(--tomato-border);
+    }
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .hero-badge {
+      background: rgba(249, 115, 22, 0.12);
+      color: var(--tomato-primary-dark);
+      font-size: 14px;
+      font-weight: 600;
+      padding: 6px 18px;
+      border-radius: 30px;
+      margin-bottom: 24px;
+      letter-spacing: 0.5px;
+    }
+    .hero-content h1 {
+      font-size: 42px;
+      line-height: 1.3;
+      font-weight: 800;
+      color: #1a1a1a;
+      margin-bottom: 18px;
+    }
+    .hero-content h1 span {
+      color: var(--tomato-primary);
+    }
+    .hero-desc {
+      font-size: 18px;
+      color: var(--tomato-text-light);
+      max-width: 700px;
+      margin-bottom: 30px;
+      line-height: 1.7;
+    }
+    .hero-search {
+      display: flex;
+      align-items: center;
+      background: white;
+      border-radius: 60px;
+      padding: 6px 6px 6px 24px;
+      width: 100%;
+      max-width: 600px;
+      box-shadow: 0 12px 30px -8px rgba(249, 115, 22, 0.25);
+      margin-bottom: 30px;
+    }
+    .hero-search input {
+      flex: 1;
+      border: none;
+      outline: none;
+      font-size: 16px;
+      background: transparent;
+      color: var(--tomato-text);
+    }
+    .hero-search button {
+      background: var(--tomato-primary);
+      color: white;
+      border: none;
+      padding: 12px 32px;
+      border-radius: 60px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+    .hero-search button:hover {
+      background: var(--tomato-primary-dark);
+    }
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .hero-tags a {
+      background: white;
+      padding: 8px 20px;
+      border-radius: 40px;
+      font-size: 14px;
+      color: var(--tomato-text);
+      border: 1px solid var(--tomato-border);
+      transition: all 0.2s;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+    }
+    .hero-tags a:hover {
+      border-color: var(--tomato-primary);
+      color: var(--tomato-primary);
+      background: #fff9f5;
+    }
+    /* 通用section */
+    .section {
+      padding: 60px 0;
+    }
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 36px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .section-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: #1a1a1a;
+      letter-spacing: -0.3px;
+    }
+    .section-title span {
+      color: var(--tomato-primary);
+    }
+    .section-more {
+      font-size: 15px;
+      color: var(--tomato-primary);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    /* 卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 24px;
+    }
+    .book-card {
+      background: var(--tomato-card-bg);
+      border-radius: var(--tomato-radius);
+      padding: 24px;
+      box-shadow: var(--tomato-shadow);
+      border: 1px solid var(--tomato-border);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .book-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--tomato-shadow-hover);
+    }
+    .book-cover {
+      height: 100px;
+      width: 80px;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #fed7aa, #fdba74);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      color: rgba(255,255,255,0.9);
+      font-weight: 700;
+    }
+    .book-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #1a1a1a;
+    }
+    .book-tag {
+      display: inline-block;
+      background: #fff3e9;
+      color: var(--tomato-primary-dark);
+      font-size: 12px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-right: 8px;
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+    .book-meta {
+      font-size: 13px;
+      color: var(--tomato-text-light);
+      display: flex;
+      justify-content: space-between;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--tomato-border);
+    }
+    .book-desc {
+      font-size: 14px;
+      color: var(--tomato-text-light);
+      line-height: 1.6;
+      margin-bottom: 8px;
+      flex: 1;
+    }
+    /* 更新列表 */
+    .update-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+    }
+    .update-item {
+      background: white;
+      padding: 16px 20px;
+      border-radius: var(--tomato-radius-sm);
+      border: 1px solid var(--tomato-border);
+      display: flex;
+      flex-direction: column;
+      transition: all 0.2s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    }
+    .update-item:hover {
+      border-color: var(--tomato-primary);
+      background: #fffcf9;
+    }
+    .update-title {
+      font-weight: 600;
+      font-size: 16px;
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .update-badge {
+      font-size: 11px;
+      background: var(--tomato-primary);
+      color: white;
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-weight: 500;
+    }
+    .update-desc {
+      font-size: 13px;
+      color: var(--tomato-text-light);
+    }
+    /* 分类入口 */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 16px;
+    }
+    .category-item {
+      background: white;
+      padding: 20px 12px;
+      text-align: center;
+      border-radius: var(--tomato-radius-sm);
+      border: 1px solid var(--tomato-border);
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--tomato-text);
+      transition: all 0.2s;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    }
+    .category-item:hover {
+      background: var(--tomato-primary);
+      color: white;
+      border-color: var(--tomato-primary);
+      transform: scale(1.02);
+    }
+    /* 深度解析 */
+    .deep-analysis {
+      background: white;
+      padding: 40px;
+      border-radius: var(--tomato-radius);
+      box-shadow: var(--tomato-shadow);
+      border: 1px solid var(--tomato-border);
+    }
+    .deep-analysis h2 {
+      font-size: 26px;
+      margin-bottom: 24px;
+      font-weight: 700;
+    }
+    .deep-analysis h2 span {
+      color: var(--tomato-primary);
+    }
+    .deep-analysis p {
+      margin-bottom: 18px;
+      color: #374151;
+      line-height: 1.8;
+      font-size: 16px;
+    }
+    /* FAQ */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .faq-item {
+      background: white;
+      padding: 24px;
+      border-radius: var(--tomato-radius-sm);
+      border: 1px solid var(--tomato-border);
+      box-shadow: var(--tomato-shadow);
+      transition: transform 0.2s;
+    }
+    .faq-item:hover {
+      transform: translateY(-3px);
+    }
+    .faq-question {
+      font-weight: 700;
+      font-size: 17px;
+      margin-bottom: 10px;
+      color: #1a1a1a;
+      display: flex;
+      gap: 8px;
+    }
+    .faq-question::before {
+      content: "Q";
+      color: var(--tomato-primary);
+      font-weight: 800;
+    }
+    .faq-answer {
+      font-size: 14px;
+      color: var(--tomato-text-light);
+      line-height: 1.8;
+      padding-left: 24px;
+    }
+    /* 评论 */
+    .comment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 18px;
+    }
+    .comment-item {
+      background: white;
+      padding: 20px;
+      border-radius: var(--tomato-radius-sm);
+      border: 1px solid var(--tomato-border);
+    }
+    .comment-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .comment-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #fdba74, #fb923c);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 600;
+      font-size: 16px;
+    }
+    .comment-name {
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .comment-date {
+      font-size: 12px;
+      color: var(--tomato-text-light);
+      margin-left: auto;
+    }
+    .comment-text {
+      font-size: 14px;
+      color: #4b5563;
+      line-height: 1.7;
+    }
+    /* 资讯 */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 20px;
+    }
+    .news-card {
+      background: white;
+      border-radius: var(--tomato-radius-sm);
+      padding: 22px;
+      border: 1px solid var(--tomato-border);
+      transition: all 0.2s;
+      box-shadow: var(--tomato-shadow);
+    }
+    .news-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--tomato-shadow-hover);
+    }
+    .news-date {
+      font-size: 12px;
+      color: var(--tomato-primary);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .news-title {
+      font-weight: 700;
+      font-size: 17px;
+      margin-bottom: 8px;
+      color: #1a1a1a;
+    }
+    .news-summary {
+      font-size: 14px;
+      color: var(--tomato-text-light);
+      line-height: 1.6;
+    }
+    /* 页脚 */
+    .footer {
+      background: #1f2937;
+      color: #9ca3af;
+      padding: 50px 0 30px;
+      margin-top: 20px;
+    }
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .footer-brand {
+      max-width: 300px;
+    }
+    .footer-brand h4 {
+      color: white;
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+    .footer-brand p {
+      font-size: 14px;
+      line-height: 1.8;
+    }
+    .footer-links {
+      display: flex;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+    .footer-links-col h5 {
+      color: white;
+      font-size: 16px;
+      margin-bottom: 16px;
+    }
+    .footer-links-col li {
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+    .footer-links-col a:hover {
+      color: var(--tomato-primary);
+    }
+    .footer-bottom {
+      border-top: 1px solid #374151;
+      margin-top: 40px;
+      padding-top: 24px;
+      font-size: 13px;
+      text-align: center;
+      color: #6b7280;
+    }
+    /* 响应式 */
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none;
+      }
+      .nav-search {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+      .hero-content h1 {
+        font-size: 32px;
+      }
+      .hero-desc {
+        font-size: 16px;
+      }
+      .section {
+        padding: 40px 0;
+      }
+      .deep-analysis {
+        padding: 24px;
+      }
+    }
+    @media (max-width: 600px) {
+      .hero-content h1 {
+        font-size: 26px;
+      }
+      .hero-search {
+        flex-direction: column;
+        background: transparent;
+        box-shadow: none;
+        gap: 10px;
+      }
+      .hero-search input {
+        width: 100%;
+        background: white;
+        padding: 14px 20px;
+        border-radius: 60px;
+        border: 1px solid var(--tomato-border);
+      }
+      .hero-search button {
+        width: 100%;
+      }
+      .section-title {
+        font-size: 22px;
+      }
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-inner {
+        flex-direction: column;
+      }
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+  <!-- 导航 -->
+  <header class="nav-bar">
+    <div class="container nav-inner">
+      <a href="/" class="logo">
+        <span class="logo-icon">🍅</span>
+        <span>番茄小说网</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/#hot-books">热门推荐</a>
+        <a href="/#latest-update">最新更新</a>
+        <a href="/#category">分类书库</a>
+        <a href="/#deep-analysis">深度解析</a>
+        <a href="/#faq">常见问题</a>
+        <a href="/#comments">读者评论</a>
+      </nav>
+      <div class="nav-search">
+        <input type="text" placeholder="搜索小说、作者或关键词...">
+        <button>搜索</button>
+      </div>
+      <button class="mobile-menu-btn">☰</button>
+    </div>
+  </header>
+
+  <!-- Banner -->
+  <section class="hero-section">
+    <div class="container hero-content">
+      <div class="hero-badge">📚 番茄小说网 · 海量正版免费小说</div>
+      <h1><span>番茄小说网</span>免费小说阅读平台<br>热门榜单与在线阅读推荐</h1>
+      <p class="hero-desc">
+        聚合番茄小说网热门小说排行榜、最新上架作品与读者口碑书评，覆盖玄幻、都市、言情、科幻等全品类。无论你是追更老书虫还是刚入坑的新读者，都能在这里快速找到心仪好书，享受流畅阅读体验。
+      </p>
+      <div class="hero-search">
+        <input type="text" placeholder="输入书名、作者或类型，如：玄幻、都市、言情...">
+        <button>立即搜索</button>
+      </div>
+      <div class="hero-tags">
+        <a href="/#hot-books">玄幻榜</a>
+        <a href="/#hot-books">都市榜</a>
+        <a href="/#hot-books">言情榜</a>
+        <a href="/#hot-books">科幻榜</a>
+        <a href="/#latest-update">今日更新</a>
+        <a href="/#latest-update">完结好书</a>
+        <a href="/#category">新书抢先</a>
+        <a href="/#deep-analysis">编辑推荐</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 热门推荐 -->
+  <section id="hot-books" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">🔥 番茄小说网<span>热门小说推荐</span></h2>
+        <a href="/#hot-books" class="section-more">查看全部 →</a>
+      </div>
+      <div class="card-grid">
+        <div class="book-card">
+          <div class="book-cover">玄</div>
+          <h3>万古神帝</h3>
+          <span class="book-tag">玄幻</span><span class="book-tag">热血</span>
+          <p class="book-desc">少年张若尘重生归来，觉醒前世记忆，逆天改命，踏碎凌霄。番茄小说网点击破亿的东方玄幻巨作，节奏爽快，世界观宏大。</p>
+          <div class="book-meta"><span>⭐ 9.2分</span><span>更新至3288章</span></div>
+        </div>
+        <div class="book-card">
+          <div class="book-cover">都</div>
+          <h3>都市医仙</h3>
+          <span class="book-tag">都市</span><span class="book-tag">异能</span>
+          <p class="book-desc">实习医生意外获得上古医仙传承，从此银针在手，天下我有。医术救人、武道杀敌，都市爽文经典代表作。</p>
+          <div class="book-meta"><span>⭐ 8.9分</span><span>更新至2156章</span></div>
+        </div>
+        <div class="book-card">
+          <div class="book-cover">言</div>
+          <h3>总裁的隐婚甜妻</h3>
+          <span class="book-tag">言情</span><span class="book-tag">甜宠</span>
+          <p class="book-desc">一场阴差阳错的闪婚，让平凡女孩嫁给了商业帝国掌舵人。隐婚日常又甜又撩，番茄小说网女生频道霸榜作品。</p>
+          <div class="book-meta"><span>⭐ 9.0分</span><span>已完结</span></div>
+        </div>
+        <div class="book-card">
+          <div class="book-cover">科</div>
+          <h3>星际流浪者</h3>
+          <span class="book-tag">科幻</span><span class="book-tag">冒险</span>
+          <p class="book-desc">地球资源枯竭后，人类踏上星际迁徙之路。主角意外获得远古文明遗产，带领舰队穿越虫洞，寻找新家园。</p>
+          <div class="book-meta"><span>⭐ 8.7分</span><span>更新至892章</span></div>
+        </div>
+        <div class="book-card">
+          <div class="book-cover">历</div>
+          <h3>大唐第一驸马</h3>
+          <span class="book-tag">历史</span><span class="book-tag">权谋</span>
+          <p class="book-desc">穿越成为大唐废柴驸马，靠现代知识步步为营，搞发明、开商路、平边疆，轻松幽默的唐朝穿越文。</p>
+          <div class="book-meta"><span>⭐ 9.1分</span><span>更新至1560章</span></div>
+        </div>
+        <div class="book-card">
+          <div class="book-cover">悬</div>
+          <h3>深夜诡事录</h3>
+          <span class="book-tag">悬疑</span><span class="book-tag">灵异</span>
+          <p class="book-desc">午夜出租车司机老陈，每晚都会遇到奇怪的乘客。一个个短篇诡事串联成主线，反转不断，胆小的读者慎入。</p>
+          <div class="book-meta"><span>⭐ 8.8分</span><span>已完结</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 最新更新 -->
+  <section id="latest-update" class="section" style="background: #fffbf8;">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">📖 最新<span>更新动态</span></h2>
+        <a href="/#latest-update" class="section-more">更多更新 →</a>
+      </div>
+      <div class="update-list">
+        <div class="update-item">
+          <div class="update-title">万古神帝 <span class="update-badge">第3288章</span></div>
+          <div class="update-desc">张若尘突破神境，决战黑手幕后，今日14:00已更新</div>
+        </div>
+        <div class="update-item">
+          <div class="update-title">都市医仙 <span class="update-badge">第2156章</span></div>
+          <div class="update-desc">叶辰重返都市，医武双修，今日12:30已更新</div>
+        </div>
+        <div class="update-item">
+          <div class="update-title">星际流浪者 <span class="update-badge">第892章</span></div>
+          <div class="update-desc">舰队抵达新星系，神秘信号源出现，今日11:15已更新</div>
+        </div>
+        <div class="update-item">
+          <div class="update-title">大唐第一驸马 <span class="update-badge">第1560章</span></div>
+          <div class="update-desc">西北大捷，驸马爷回京受封，今日10:00已更新</div>
+        </div>
+        <div class="update-item">
+          <div class="update-title">总裁的隐婚甜妻 <span class="update-badge">完结</span></div>
+          <div class="update-desc">番外篇：小包子三岁啦，全家福甜蜜放送</div>
+        </div>
+        <div class="update-item">
+          <div class="update-title">深夜诡事录 <span class="update-badge">完结</span></div>
+          <div class="update-desc">作者新书《阴阳典当行》已上线，欢迎收藏</div>
+        </div>
+        <div class="update-item">
+          <div class="update-title">重生之娱乐天后 <span class="update-badge">第445章</span></div>
+          <div class="update-desc">林晚晚问鼎影后，颁奖礼现场求婚，今日15:20已更新</div>
+        </div>
+        <div class="update-item">
+          <div class="update-title">修仙从种田开始 <span class="update-badge">第672章</span></div>
+          <div class="update-desc">灵田大丰收，宗门大比开启，今日09:40已更新</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 分类入口 -->
+  <section id="category" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">📂 番茄小说网<span>分类书库</span></h2>
+        <a href="/#category" class="section-more">全部分类 →</a>
+      </div>
+      <div class="category-grid">
+        <a href="/#category" class="category-item">玄幻奇幻</a>
+        <a href="/#category" class="category-item">都市异能</a>
+        <a href="/#category" class="category-item">言情小说</a>
+        <a href="/#category" class="category-item">科幻末世</a>
+        <a href="/#category" class="category-item">历史军事</a>
+        <a href="/#category" class="category-item">悬疑灵异</a>
+        <a href="/#category" class="category-item">游戏竞技</a>
+        <a href="/#category" class="category-item">二次元轻小说</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 深度解析 -->
+  <section id="deep-analysis" class="section">
+    <div class="container">
+      <div class="deep-analysis">
+        <h2><span>番茄小说网</span>深度解析：为什么这些书值得一读？</h2>
+        <p>在众多免费小说平台中，番茄小说网凭借其独特的作品风格和读者生态脱颖而出。作为专注于网络文学的内容聚合平台，番茄小说网涵盖了玄幻、都市、言情、科幻、历史、悬疑等几乎所有热门品类，并且通过智能推荐和榜单机制，让优质作品能够快速触达读者。对于刚接触番茄小说网的读者来说，最直观的感受就是“爽点密集、更新稳定、免费畅读”——这三点恰恰是网络小说消费的核心需求。</p>
+        <p>从题材特点来看，番茄小说网的头部作品往往具备明确的故事主线和高频的冲突设计。以玄幻品类为例，《万古神帝》这类作品通常以“废柴逆袭”开篇，在极短的篇幅内完成金手指觉醒，随后通过层层递进的敌人设置和地图切换，保持读者的阅读黏性。而都市品类则更强调现实代入感与超现实能力的结合，《都市医仙》将中医传承与现代都市生活嫁接，既有专业细节又有打脸爽感，这种混搭风格在番茄小说网的读者群中非常受欢迎。</p>
+        <p>言情品类在番茄小说网同样占据重要位置，尤其是甜宠、替嫁、马甲文等细分类型。《总裁的隐婚甜妻》这类作品的核心吸引力在于“身份差”带来的戏剧张力，读者享受的是主角在隐瞒与暴露之间反复拉扯的阅读快感。番茄小说网的言情作品普遍节奏明快，情绪浓度高，适合碎片化阅读场景。科幻和历史品类虽然相对小众，但《星际流浪者》《大唐第一驸马》等作品凭借扎实的设定和考据细节，同样积累了大量忠实读者。</p>
+        <p>从人物塑造角度分析，番茄小说网的热门作品通常采用“强主角、弱配角”的设定模式。主角往往具备清晰的成长目标和鲜明的性格标签，比如重生的复仇者、获得传承的普通人、穿越改变命运的现代人。这种设定降低了读者的理解成本，也让情绪投射更加顺畅。与此同时，番茄小说网的配角虽然功能性较强，但近年来越来越多作品开始在配角身上增加记忆点，比如忠心的老仆、傲娇的对手、神秘的上古存在，这些角色虽然着墨不多，却能有效烘托主角形象。</p>
+        <p>在节奏与消费体验方面，番茄小说网的作品普遍采用“三章一个小高潮，十章一个大高潮”的结构。每章结尾几乎都会留下悬念或期待，这种写法虽然被部分读者诟病为“套路”，但对于追更读者而言，确实是保持阅读习惯的有效手段。番茄小说网的章节长度多在2000-3000字之间，适合通勤、午休等碎片时间阅读。此外，平台的听书功能和自动阅读模式，也为不同场景下的阅读提供了便利。</p>
+        <p>适合人群方面，番茄小说网的读者覆盖非常广泛。学生群体偏爱玄幻、游戏竞技和轻小说；上班族更倾向都市异能和言情甜宠；有一定阅读阅历的读者则会在历史、悬疑品类中寻找深度。番茄小说网的榜单和分类系统能够帮助不同偏好的读者快速定位内容，减少试错成本。对于想要了解网络文学流行趋势的读者来说，番茄小说网的热门榜单本身就是一个观察窗口。</p>
+        <p>与同类平台相比，番茄小说网的优势在于免费模式和算法推荐的结合。读者不需要付费就能阅读大量作品，这降低了阅读门槛，也让更多新人作者有机会被看见。当然，免费模式也意味着作品质量参差不齐，这时候善用番茄小说网的分类筛选和书评区就显得尤为重要。建议新读者先从榜单前二十的作品入手，感受平台主流风格，再根据个人喜好深入挖掘细分品类。</p>
+        <p>读者搜索“番茄小说网”时，通常想了解的是：有哪些热门小说值得看、在哪里可以免费阅读、某个品类有什么代表作、平台上的书质量怎么样。这篇页面正是围绕这些真实需求展开，提供榜单推荐、分类导航、深度解析和读者评论，帮助你在番茄小说网找到属于自己的那本好书。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section" style="background: #fffbf8;">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">❓ 关于<span>番茄小说网</span>常见问题</h2>
+      </div>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <div class="faq-question">番茄小说网是免费的吗？</div>
+          <div class="faq-answer">是的，番茄小说网主打免费阅读模式，大部分小说都可以免费阅读全部章节。平台通过广告和会员增值服务维持运营，读者无需付费即可畅读海量作品。不过部分新书或特定作品可能会有付费抢先看活动，具体以页面标识为准。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">番茄小说网的热门榜单怎么参考？</div>
+          <div class="faq-answer">番茄小说网的榜单通常分为热销榜、新书榜、完结榜和口碑榜。热销榜反映近期阅读热度，适合找大众爆款；新书榜适合追更尝鲜；完结榜适合不想等更新的读者；口碑榜则综合了评分和评论质量。建议优先看口碑榜和完结榜，踩坑概率更低。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">在番茄小说网看小说需要注册吗？</div>
+          <div class="faq-answer">阅读基础章节通常不需要注册，但注册登录后可以同步书架、收藏作品、发表评论以及获得个性化推荐。如果你打算长期使用番茄小说网，建议注册账号，这样换设备也能无缝衔接阅读进度，还能参与社区互动。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">番茄小说网适合看什么类型的小说？</div>
+          <div class="faq-answer">番茄小说网覆盖面很广，玄幻、都市、言情、科幻、历史、悬疑、游戏竞技、轻小说都有大量作品。其中玄幻和都市是传统强势品类，言情频道的甜宠、马甲文更新非常快。如果你喜欢短平快的爽文节奏，番茄小说网的推荐算法会比较对胃口。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">如何找到类似《万古神帝》的小说？</div>
+          <div class="faq-answer">在番茄小说网搜索《万古神帝》进入详情页后，页面下方通常会有“喜欢这本书的人也在看”推荐列表，这是最直接的找书方式。另外可以关注玄幻分类下的热销榜和完本榜，筛选“东方玄幻”“热血逆袭”标签，也能找到风格相近的作品。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">番茄小说网的更新频率怎么样？</div>
+          <div class="faq-answer">番茄小说网的签约作者普遍保持日更，热门作品通常每天更新1-2章，部分勤奋作者会三更甚至更多。连载作品一般在中午和晚上两个时段更新，完结作品则一次性放出全部章节。建议关注作品页面的更新公告，或开启更新提醒功能。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 评论 -->
+  <section id="comments" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">💬 读者<span>真实评论</span></h2>
+        <a href="/#comments" class="section-more">更多讨论 →</a>
+      </div>
+      <div class="comment-grid">
+        <div class="comment-item">
+          <div class="comment-header">
+            <span class="comment-avatar">书</span>
+            <span class="comment-name">书虫小张</span>
+            <span class="comment-date">2026-11-05</span>
+          </div>
+          <p class="comment-text">番茄小说网的玄幻区真的顶，《万古神帝》追了两年了，虽然有时候水了点，但爽点给得足，每天中午更新必看。</p>
+        </div>
+        <div class="comment-item">
+          <div class="comment-header">
+            <span class="comment-avatar">夜</span>
+            <span class="comment-name">夜读人</span>
+            <span class="comment-date">2026-11-04</span>
+          </div>
+          <p class="comment-text">最近在番茄小说网找悬疑文，《深夜诡事录》确实不错，短篇形式不拖沓，就是晚上看有点后背发凉。</p>
+        </div>
+        <div class="comment-item">
+          <div class="comment-header">
+            <span class="comment-avatar">甜</span>
+            <span class="comment-name">甜甜圈不加糖</span>
+            <span class="comment-date">2026-11-03</span>
+          </div>
+          <p class="comment-text">言情频道推荐《总裁的隐婚甜妻》，虽然剧情有点老套但就是停不下来，番外篇小包子太可爱了。</p>
+        </div>
+        <div class="comment-item">
+          <div class="comment-header">
+            <span class="comment-avatar">历</span>
+            <span class="comment-name">历史迷老李</span>
+            <span class="comment-date">2026-11-02</span>
+          </div>
+          <p class="comment-text">《大唐第一驸马》考据做得不错，没有把现代东西生搬硬套，作者明显查过资料，番茄小说网历史区难得的好书。</p>
+        </div>
+        <div class="comment-item">
+          <div class="comment-header">
+            <span class="comment-avatar">星</span>
+            <span class="comment-name">星际漫游者</span>
+            <span class="comment-date">2026-10-30</span>
+          </div>
+          <p class="comment-text">科幻分类在番茄小说网不算大火，但《星际流浪者》质量真的可以，设定严谨，希望作者别烂尾。</p>
+        </div>
+        <div class="comment-item">
+          <div class="comment-header">
+            <span class="comment-avatar">路</span>
+            <span class="comment-name">路过的读者</span>
+            <span class="comment-date">2026-10-29</span>
+          </div>
+          <p class="comment-text">番茄小说网免费是真免费，但广告有点多，开会员能免广告，看个人取舍吧。书的质量参差不齐，得会挑。</p>
+        </div>
+        <div class="comment-item">
+          <div class="comment-header">
+            <span class="comment-avatar">追</span>
+            <span class="comment-name">追更狂魔</span>
+            <span class="comment-date">2026-10-28</span>
+          </div>
+          <p class="comment-text">《修仙从种田开始》更新稳定，种田修仙流写得挺有意思，比那些无脑打脸文强多了，番茄小说网现在这种创新题材越来越多了。</p>
+        </div>
+        <div class="comment-item">
+          <div class="comment-header">
+            <span class="comment-avatar">阿</span>
+            <span class="comment-name">阿西吧</span>
+            <span class="comment-date">2026-10-27</span>
+          </div>
+          <p class="comment-text">都市医仙前面挺好看的，后面战力有点崩，希望作者控制一下节奏。番茄小说网的都市文通病就是后期容易放飞。</p>
+        </div>
+        <div class="comment-item">
+          <div class="comment-header">
+            <span class="comment-avatar">小</span>
+            <span class="comment-name">小透明</span>
+            <span class="comment-date">2026-10-25</span>
+          </div>
+          <p class="comment-text">番茄小说网的推荐算法还行，给我推的几本都挺合胃口，就是有时候会重复推荐同一本书，希望优化一下。</p>
+        </div>
+        <div class="comment-item">
+          <div class="comment-header">
+            <span class="comment-avatar">完</span>
+            <span class="comment-name">完结党</span>
+            <span class="comment-date">2026-10-24</span>
+          </div>
+          <p class="comment-text">只看完结的，番茄小说网完本榜帮我省了不少时间，不过有些老书结局仓促，选书前还是得看看书评。</p>
+        </div>
+        <div class="comment-item">
+          <div class="comment-header">
+            <span class="comment-avatar">娱</span>
+            <span class="comment-name">娱乐天后粉</span>
+            <span class="comment-date">2026-10-22</span>
+          </div>
+          <p class="comment-text">《重生之娱乐天后》感情线写得很细腻，女主搞事业也带感，番茄小说网言情区难得的大女主文。</p>
+        </div>
+        <div class="comment-item">
+          <div class="comment-header">
+            <span class="comment-avatar">新</span>
+            <span class="comment-name">新手上路</span>
+            <span class="comment-date">2026-10-20</span>
+          </div>
+          <p class="comment-text">刚用番茄小说网，分类挺清楚的，找书方便。就是有些书封面太像了，容易点错。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 相关资讯 -->
+  <section id="news" class="section" style="background: #fffbf8;">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">📰 番茄小说网<span>相关资讯</span></h2>
+      </div>
+      <div class="news-grid">
+        <div class="news-card">
+          <div class="news-date">2026-11-06</div>
+          <div class="news-title">番茄小说网发布2026年度十大热门小说榜单</div>
+          <p class="news-summary">年度榜单综合了阅读量、完读率和读者评分，《万古神帝》《都市医仙》《大唐第一驸马》位列前三，言情频道《总裁的隐婚甜妻》成为年度黑马。</p>
+        </div>
+        <div class="news-card">
+          <div class="news-date">2026-11-04</div>
+          <div class="news-title">番茄小说网推出“新书抢先读”计划，扶持新人作者</div>
+          <p class="news-summary">平台宣布投入千万流量扶持新人作者，新书上线即可获得首轮推荐位，优秀作品还将获得额外曝光和稿费奖励。</p>
+        </div>
+        <div class="news-card">
+          <div class="news-date">2026-11-01</div>
+          <div class="news-title">《星际流浪者》第二季确认，作者透露新剧情走向</div>
+          <p class="news-summary">番茄小说网科幻频道人气作品《星际流浪者》宣布续写第二季，作者在直播中透露主角将面临更复杂的星际政治博弈。</p>
+        </div>
+        <div class="news-card">
+          <div class="news-date">2026-10-28</div>
+          <div class="news-title">番茄小说网听书功能升级，支持多角色情感朗读</div>
+          <p class="news-summary">平台听书功能完成新一轮升级，新增多角色情感朗读和背景音效，玄幻、言情等品类的听书体验明显提升，适合通勤场景。</p>
+        </div>
+        <div class="news-card">
+          <div class="news-date">2026-10-25</div>
+          <div class="news-title">番茄小说网热门短剧改编潮持续，《总裁的隐婚甜妻》立项</div>
+          <p class="news-summary">继多部小说成功改编短剧后，《总裁的隐婚甜妻》也宣布影视化，预计明年上线。平台表示将加速IP开发，打通阅读与视频场景。</p>
+        </div>
+        <div class="news-card">
+          <div class="news-date">2026-10-20</div>
+          <div class="news-title">番茄小说网社区上线“书粉圈”功能，读者可创建话题</div>
+          <p class="news-summary">新功能允许读者围绕单本书创建讨论圈，支持角色投票、剧情预测和同人创作分享，进一步增强了读者之间的互动黏性。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <h4>🍅 番茄小说网</h4>
+          <p>免费小说阅读平台，汇集玄幻、都市、言情、科幻、历史、悬疑等海量作品，每日更新不断，为你提供流畅的在线阅读体验。</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-links-col">
+            <h5>快速导航</h5>
+            <ul>
+              <li><a href="/#hot-books">热门推荐</a></li>
+              <li><a href="/#latest-update">最新更新</a></li>
+              <li><a href="/#category">分类书库</a></li>
+              <li><a href="/#deep-analysis">深度解析</a></li>
+            </ul>
+          </div>
+          <div class="footer-links-col">
+            <h5>帮助中心</h5>
+            <ul>
+              <li><a href="/#faq">常见问题</a></li>
+              <li><a href="/#comments">读者评论</a></li>
+              <li><a href="/#news">平台资讯</a></li>
+              <li><a href="/#">意见反馈</a></li>
+            </ul>
+          </div>
+          <div class="footer-links-col">
+            <h5>友情链接</h5>
+            <ul>
+              <li><a href="/#">免费小说阅读网</a></li>
+              <li><a href="/#">热门小说排行榜</a></li>
+              <li><a href="/#">网络文学社区</a></li>
+              <li><a href="/#">在线阅读平台</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 番茄小说网 内容推荐专题页 · 本站为内容聚合展示页面，小说版权归原作者所有</p>
+        <p>免责声明：本页面所展示的书名、简介、评论等信息均来源于公开网络内容，仅供阅读参考，不构成任何购买或投资建议。</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+          </html>
